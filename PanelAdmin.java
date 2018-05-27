@@ -48,7 +48,7 @@ public class PanelAdmin extends javax.swing.JFrame {
      */
     public PanelAdmin() {
         initComponents();
-        carreraModel = new DefaultComboBoxModel(new String[] {});
+        carreraModel = new DefaultComboBoxModel(new String[] {}); //modelo de carrera
         turnoModel = new DefaultComboBoxModel(new String[] {});
         cicloModel =  new DefaultComboBoxModel(new String[] {});
         semestreModel = new DefaultComboBoxModel(new String[] {});
