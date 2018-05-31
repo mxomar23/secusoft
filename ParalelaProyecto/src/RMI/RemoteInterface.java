@@ -19,7 +19,7 @@ public interface RemoteInterface extends Remote{
     public int login(String usuario, String password) throws Exception;
     public void eliminar(String eliminacion) throws Exception;
     public void insertarUsuario( String usuario, String contraseña, int id_ususario )throws Exception;
-    public void insertarMaestro(int id_alumno, String nombre, String apellido, int matricula)throws Exception;
+    public void insertarMaestro(int id_alumno, String nombre, String apellido, int matricula, int grupo, int semestre)throws Exception;
     public void insertarServe(int id_alumno, String nombre, String apellido)throws Exception;
     public void insertarAlumno(int id_alumno, String nombre, String apellido, int matricula, int grupo, int semestre, int carrera, int ciclo, int turno)throws Exception;
     public ArrayList retornodeUsuario(String user)throws Exception;
@@ -27,6 +27,8 @@ public interface RemoteInterface extends Remote{
     public ArrayList datosAlumno(int Dgrupo ,int Dsemestre, int Dcarrera ,int Dciclo ,int Dturno )throws Exception;
     public ArrayList retornodeDocente(int id)throws Exception;
     public ArrayList retornodeServe(int id)throws Exception;
+    public ArrayList llenarAlumnosDocente(int id)throws Exception;
+    public ArrayList llenarMaterias(int Dsemestre, int Dcarrera)throws Exception;
     
     public Connection conexion()throws Exception;
 }

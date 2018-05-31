@@ -698,6 +698,11 @@ public class PanelAdmin extends javax.swing.JFrame {
             PasswdTextField.setText("");
             UserTextField.setVisible(false);
             PasswdTextField.setVisible(false);
+            SemestrecomboBox.setVisible(true);
+            jLabel13.setVisible(true);
+            GrupoComboBox.setVisible(true);
+
+            jLabel11.setVisible(true);
             jLabel2.setVisible(false);
             jLabel3.setVisible(false);
             jLabel4.setVisible(false);
@@ -803,10 +808,10 @@ public class PanelAdmin extends javax.swing.JFrame {
         ApellidoDatosJText.setText("");
         MatriculaDatosJtext.setText("");
         GrupoDatosTextfield.setText("");
-        SemestreDatosJlabel.setVisible(false);
-        SemestreDatosTextField.setVisible(false);
-        CarreraDatosJlabel.setVisible(false);
-        CarreraDatosTextField.setVisible(false);
+        SemestreDatosJlabel.setVisible(true);
+        SemestreDatosTextField.setVisible(true);
+        CarreraDatosJlabel.setVisible(true);
+        CarreraDatosTextField.setVisible(true);
         CicloDatosJLabel.setVisible(false);
         CicloDatosTextField.setVisible(false);
         TurnoDatosJlabel.setVisible(false);
@@ -820,8 +825,8 @@ public class PanelAdmin extends javax.swing.JFrame {
         nombreDatosTextField.setText("");
         ApellidoDatosJText.setText("");
         MatriculaDatosJtext.setText("");
-        GrupoDatosJLabel.setVisible(true);
-        GrupoDatosTextfield.setVisible(true);
+        GrupoDatosJLabel.setVisible(false);
+        GrupoDatosTextfield.setVisible(false);
         GrupoDatosJLabel.setVisible(false);
         GrupoDatosTextfield.setVisible(false);
         SemestreDatosJlabel.setVisible(false);
@@ -954,10 +959,12 @@ public class PanelAdmin extends javax.swing.JFrame {
                 break;
             case 3:         
                 matricula = Integer.parseInt(matriculaTextField.getText());
+                grupo = GrupoComboBox.getSelectedIndex() +1 ;
+                semestre = SemestrecomboBox.getSelectedIndex() + 1;
                 try {
                     Registry MiRegistro = LocateRegistry.getRegistry("127.0.0.1", 1234);
                     RemoteInterface a = (RemoteInterface) MiRegistro.lookup("SE");  
-                    a.insertarMaestro(id_alumno, nombre, apellido, matricula);
+                    a.insertarMaestro(id_alumno, nombre, apellido, matricula, grupo, semestre);
                     JOptionPane.showMessageDialog(this, "Maestro Agregado con exito", "Aceptado", JOptionPane.INFORMATION_MESSAGE);
                 }catch (Exception e) {   
                     System.err.println("El servidor no esta prendido ");

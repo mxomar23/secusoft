@@ -78,10 +78,10 @@ public class ServerImplements extends UnicastRemoteObject implements RemoteInter
         }
     }
 
-    public void insertarMaestro(int id_alumno, String nombre, String apellido, int matricula) throws Exception {
+    public void insertarMaestro(int id_alumno, String nombre, String apellido, int matricula, int grupo, int semestre) throws Exception {
         try {
             Connection conexion = conexion();
-            String SSQL="INSERT INTO `maestros` (`id_usuario`, `nombre`, `apellido`, `matricula` ) VALUES ('"+id_alumno+"', '"+nombre+"', '"+apellido+"'"
+            String SSQL="INSERT INTO `maestros` (`id_usuario`, `nombre`, `apellido`, `matricula`, `id_grupo` ,`id_semestre`) VALUES ('"+id_alumno+"', '"+nombre+"', '"+apellido+"'"
                         + ",'"+matricula+"') ";
             Statement s = conexion.createStatement();
             s.executeUpdate(SSQL);
@@ -213,4 +213,41 @@ public class ServerImplements extends UnicastRemoteObject implements RemoteInter
          }
          return null;
      }
+          public ArrayList llenarAlumnosDocente(int id){
+            ArrayList al = new ArrayList();
+            int grupo = 0;
+            try {
+            Connection conexion = conexion();
+            Statement s = conexion.createStatement();
+            ResultSet rs = s.executeQuery("SELECT * FROM maestros WHERE id_usuario= '"+id+"' ");
+            while (rs.next()){
+            grupo = rs.getInt(5);
+            }
+                
+            ResultSet rs2 = s.executeQuery("SELECT * FROM alumnos WHERE id_grupo= '"+grupo+"' ");
+            while(rs2.next()) {
+            al.add(rs2.getString(2));
+            al.add(rs2.getString(3));
+            }
+         return al;
+         } catch (Exception e) {
+         }
+         return null;
+     }
+          public ArrayList llenarMaterias(int Dsemestre, int Dcarrera){
+               ArrayList al = new ArrayList();
+            
+            try {
+            Connection conexion = conexion();
+            Statement s = conexion.createStatement();
+            ResultSet rs = s.executeQuery("Select * FROM materias WHERE id_semestre = '"+Dsemestre+"'"
+                    + " AND id_carrera = '"+Dcarrera+"'");
+            while (rs.next()){
+            al.add(rs.getString(2));
+            }
+         return al;
+         } catch (Exception e) {
+         }
+         return null;
+          }
 }

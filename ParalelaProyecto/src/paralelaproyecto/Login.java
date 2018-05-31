@@ -32,6 +32,7 @@ public class Login extends javax.swing.JFrame {
      * Creates new form Login
      */
     public Login() {
+        
         initComponents();
     }
 
@@ -151,7 +152,7 @@ public class Login extends javax.swing.JFrame {
                     break;
                 case 3:
                     this.hide();
-                    PanelDocente panelDocente = new PanelDocente();
+                    PanelDocente panelDocente = new PanelDocente(usuario);
                     panelDocente.setVisible(true);
                     break;
                 case 4:
