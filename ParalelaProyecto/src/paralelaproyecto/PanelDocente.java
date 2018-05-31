@@ -23,8 +23,11 @@ public class PanelDocente extends javax.swing.JFrame {
     public String usuario;
     ArrayList al = new ArrayList();
     DefaultListModel model2 =  new DefaultListModel();
+    
     public int id;
+    public int id_captura;
     public final DefaultComboBoxModel materiaModel;
+    
     /**
      * Creates new form PanelAdmin
      */
@@ -34,7 +37,9 @@ public class PanelDocente extends javax.swing.JFrame {
         
          materiaModel =  new DefaultComboBoxModel(new String[] {});
         ListaDatos.setModel(model2);
+        ListaDatos1.setModel(model2);
         MateriasComboBox.setModel(materiaModel);
+        MateriasComboBox1.setModel(materiaModel);
         try {
  
             Registry MiRegistro = LocateRegistry.getRegistry("127.0.0.1", 1234);
@@ -79,6 +84,19 @@ public class PanelDocente extends javax.swing.JFrame {
         MatriculaDatosJtext = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         MateriasComboBox = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
+        calificacionEditTextNE = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        ObtenerCalificacionboton = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        ListaDatos1 = new javax.swing.JList<>();
+        jLabel3 = new javax.swing.JLabel();
+        MateriasComboBox1 = new javax.swing.JComboBox<>();
+        jLabel4 = new javax.swing.JLabel();
+        CalificacionTextField = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        CapturarBoton = new javax.swing.JButton();
 
         jButton1.setText("jButton1");
 
@@ -135,6 +153,34 @@ public class PanelDocente extends javax.swing.JFrame {
         jLabel2.setText("Materias");
 
         MateriasComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        MateriasComboBox.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                MateriasComboBoxItemStateChanged(evt);
+            }
+        });
+        MateriasComboBox.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MateriasComboBoxMouseClicked(evt);
+            }
+        });
+        MateriasComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MateriasComboBoxActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("Nombre del alumno");
+
+        calificacionEditTextNE.setEditable(false);
+
+        jLabel6.setText("Calificacion");
+
+        ObtenerCalificacionboton.setText("Mostrar Calificacion");
+        ObtenerCalificacionboton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ObtenerCalificacionbotonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -143,7 +189,9 @@ public class PanelDocente extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(160, 160, 160)
+                        .addContainerGap()
+                        .addComponent(jLabel1)
+                        .addGap(116, 116, 116)
                         .addComponent(nombreJlabelDatos)
                         .addGap(63, 63, 63)
                         .addComponent(ApellidoDatosJlabel))
@@ -172,22 +220,32 @@ public class PanelDocente extends javax.swing.JFrame {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(160, 160, 160)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(CicloDatosTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(MateriasComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addComponent(CicloDatosTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(20, 20, 20)
-                                .addComponent(TurnoDatosJtext, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(MateriasComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(ObtenerCalificacionboton))
+                        .addGap(20, 20, 20)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(calificacionEditTextNE)
+                                .addComponent(TurnoDatosJtext, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)))))
                 .addGap(20, 20, 20))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(40, 40, 40)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(nombreJlabelDatos)
-                    .addComponent(ApellidoDatosJlabel))
-                .addGap(6, 6, 6)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(nombreJlabelDatos)
+                            .addComponent(ApellidoDatosJlabel))
+                        .addGap(6, 6, 6))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18)))
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
@@ -220,23 +278,101 @@ public class PanelDocente extends javax.swing.JFrame {
                     .addComponent(CicloDatosTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(TurnoDatosJtext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel2)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(MateriasComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(MateriasComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(calificacionEditTextNE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(ObtenerCalificacionboton)
                 .addContainerGap())
         );
 
         jTabbedPane1.addTab("Consulta calificaciones", jPanel4);
 
+        ListaDatos1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        ListaDatos1.setSelectedIndex(0);
+        ListaDatos1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ListaDatos1MouseClicked(evt);
+            }
+        });
+        jScrollPane5.setViewportView(ListaDatos1);
+
+        jLabel3.setText("Nombre del alumno");
+
+        MateriasComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jLabel4.setText("Materias");
+
+        jLabel5.setText("Calificacion");
+
+        CapturarBoton.setText("Capturar");
+        CapturarBoton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CapturarBotonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(CapturarBoton)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(37, 37, 37)
+                        .addComponent(jLabel4))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(MateriasComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CalificacionTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5))))
+                .addContainerGap(317, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(MateriasComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel5)
+                        .addGap(18, 18, 18)
+                        .addComponent(CalificacionTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(35, 35, 35)
+                .addComponent(CapturarBoton)
+                .addContainerGap(118, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Captura de calificaciones", jPanel1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 535, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 604, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 322, Short.MAX_VALUE)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 404, Short.MAX_VALUE)
         );
 
         pack();
@@ -245,8 +381,57 @@ public class PanelDocente extends javax.swing.JFrame {
 
     private void ListaDatosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ListaDatosMouseClicked
         String nomb = (String)ListaDatos.getSelectedValue();
+        System.out.println(nomb);
         ConsultarDatos(nomb);
+        
     }//GEN-LAST:event_ListaDatosMouseClicked
+
+    private void ListaDatos1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ListaDatos1MouseClicked
+        String nomb = (String)ListaDatos1.getSelectedValue();
+        System.out.println(nomb);
+        ConsultarDatos(nomb);
+    }//GEN-LAST:event_ListaDatos1MouseClicked
+
+    private void CapturarBotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CapturarBotonActionPerformed
+        
+        String materia = (String)MateriasComboBox1.getSelectedItem();
+        int calificacion = Integer.parseInt(CalificacionTextField.getText());
+        try {
+             Registry MiRegistro = LocateRegistry.getRegistry("127.0.0.1", 1234);
+             RemoteInterface a = (RemoteInterface) MiRegistro.lookup("SE");  
+             a.capturaCalificacion(id_captura, materia, calificacion);
+             
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Error de captura " + e , "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        JOptionPane.showMessageDialog(this, "Captura del alumno exitosa"  , "Aceptado", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_CapturarBotonActionPerformed
+
+    private void MateriasComboBoxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MateriasComboBoxMouseClicked
+         
+    }//GEN-LAST:event_MateriasComboBoxMouseClicked
+
+    private void MateriasComboBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_MateriasComboBoxItemStateChanged
+
+    }//GEN-LAST:event_MateriasComboBoxItemStateChanged
+
+    private void MateriasComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MateriasComboBoxActionPerformed
+          
+        
+    }//GEN-LAST:event_MateriasComboBoxActionPerformed
+
+    private void ObtenerCalificacionbotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ObtenerCalificacionbotonActionPerformed
+        String materia = (String)MateriasComboBox.getSelectedItem();
+           al.clear();
+            try {
+             Registry MiRegistro = LocateRegistry.getRegistry("127.0.0.1", 1234);
+             RemoteInterface a = (RemoteInterface) MiRegistro.lookup("SE");  
+             al = a.calificacion(id_captura, materia);
+             calificacionEditTextNE.setText(al.get(0).toString());
+        } catch (Exception e) {
+             calificacionEditTextNE.setText("NR");
+        }
+    }//GEN-LAST:event_ObtenerCalificacionbotonActionPerformed
                                       
 
         private void LlenarListaDatos(int dato){
@@ -258,9 +443,9 @@ public class PanelDocente extends javax.swing.JFrame {
                 Registry MiRegistro = LocateRegistry.getRegistry("127.0.0.1", 1234);
                 RemoteInterface a = (RemoteInterface) MiRegistro.lookup("SE");  
                 al = a.llenarAlumnosDocente(id_user);
-                
-                for(int i= 0; i < al.size() -1; i+=2){
-                    model2.addElement(al.get(i).toString() + " " + al.get(i+1).toString());
+                 System.out.println(al.size());
+                for(int i= 0; i < al.size() ; i++){
+                    model2.addElement(al.get(i).toString());
              }
              } catch (Exception e) {
              }
@@ -281,8 +466,9 @@ public class PanelDocente extends javax.swing.JFrame {
             
             Registry MiRegistro = LocateRegistry.getRegistry("127.0.0.1", 1234);
             RemoteInterface a = (RemoteInterface) MiRegistro.lookup("SE");  
-            al = a.retornodeUsuario(nomb);
+            al = a.retornodeAlumnoDocente(nomb);
             id = (int)al.get(0);
+            id_captura = (int)al.get(0);
         } catch (Exception e) {
         }
              try {
@@ -292,6 +478,7 @@ public class PanelDocente extends javax.swing.JFrame {
              Registry MiRegistro = LocateRegistry.getRegistry("127.0.0.1", 1234);
                 RemoteInterface a = (RemoteInterface) MiRegistro.lookup("SE");  
                 al = a.retornodeAlumno(id);
+                 System.out.println(al.size());
                 nombreDatosTextField.setText(al.get(0).toString());
                 ApellidoDatosJText.setText(al.get(1).toString());
                 MatriculaDatosJtext.setText(al.get(2).toString());
@@ -307,17 +494,20 @@ public class PanelDocente extends javax.swing.JFrame {
                 TurnoDatosJtext.setText(al2.get(4).toString());
             }
             catch (Exception e) {   
-                    System.err.println("El servidor no esta prendido " +e);
+                    System.err.println("Error de llenado de datos " +e);
                }
              try {
                  al.clear();
+                 materiaModel.removeAllElements();
                   Registry MiRegistro = LocateRegistry.getRegistry("127.0.0.1", 1234);
                 RemoteInterface a = (RemoteInterface) MiRegistro.lookup("SE");
                 al = a.llenarMaterias(Dsemestre, Dcarrera);
+                 System.out.println(al.size());
                 for(int i = 0; i< al.size(); i++){
                     materiaModel.addElement(al.get(i).toString());
                 }
              } catch (Exception e) {
+                  System.err.println("Error de llenado de materias " +e);
              }
           
          }     
@@ -329,6 +519,8 @@ public class PanelDocente extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField ApellidoDatosJText;
     private javax.swing.JLabel ApellidoDatosJlabel;
+    private javax.swing.JTextField CalificacionTextField;
+    private javax.swing.JButton CapturarBoton;
     private javax.swing.JLabel CarreraDatosJlabel;
     private javax.swing.JTextField CarreraDatosTextField;
     private javax.swing.JLabel CicloDatosJLabel;
@@ -336,17 +528,28 @@ public class PanelDocente extends javax.swing.JFrame {
     private javax.swing.JLabel GrupoDatosJLabel;
     private javax.swing.JTextField GrupoDatosTextfield;
     private javax.swing.JList<String> ListaDatos;
+    private javax.swing.JList<String> ListaDatos1;
     private javax.swing.JComboBox<String> MateriasComboBox;
+    private javax.swing.JComboBox<String> MateriasComboBox1;
     private javax.swing.JLabel MatriculaDatosJLabel;
     private javax.swing.JTextField MatriculaDatosJtext;
+    private javax.swing.JButton ObtenerCalificacionboton;
     private javax.swing.JLabel SemestreDatosJlabel;
     private javax.swing.JTextField SemestreDatosTextField;
     private javax.swing.JLabel TurnoDatosJlabel;
     private javax.swing.JTextField TurnoDatosJtext;
+    private javax.swing.JTextField calificacionEditTextNE;
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField nombreDatosTextField;
     private javax.swing.JLabel nombreJlabelDatos;
