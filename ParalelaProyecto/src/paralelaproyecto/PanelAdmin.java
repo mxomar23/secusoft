@@ -45,11 +45,12 @@ public class PanelAdmin extends javax.swing.JFrame {
     DefaultListModel model2 =  new DefaultListModel();
      Connection conexion;
     Statement s;
-    private int tipoUsuario;
+    private int tipoUsuario, idUsuario;
     /**
      * Creates new form PanelAdmin
      */
-    public PanelAdmin() {
+    public PanelAdmin(int id_admin) {
+        this.idUsuario = id_admin;
         initComponents();
         carreraModel = new DefaultComboBoxModel(new String[] {});
         turnoModel = new DefaultComboBoxModel(new String[] {});
@@ -762,10 +763,12 @@ public class PanelAdmin extends javax.swing.JFrame {
                 Registry MiRegistro = LocateRegistry.getRegistry("127.0.0.1", 1234);
                 RemoteInterface a = (RemoteInterface) MiRegistro.lookup("SE");
                 a.eliminar(eliminacion);
+                a.cerrarConexion();
             }catch (Exception e) {
                 System.err.println("El servidor no esta prendido ");
             }
             JOptionPane.showMessageDialog(this, "Usuario Eliminado con exito", "Aceptado", JOptionPane.INFORMATION_MESSAGE);
+            
             LlenarLista();
 
         }
@@ -933,7 +936,7 @@ public class PanelAdmin extends javax.swing.JFrame {
             String usernew = user;
             Registry MiRegistro = LocateRegistry.getRegistry("127.0.0.1", 1234);
             RemoteInterface a = (RemoteInterface) MiRegistro.lookup("SE");  
-            al = a.retornodeUsuario(usernew);
+            al = a.login(user, passwd);
             id_alumno = (int)al.get(0);
         }catch (Exception e) {   
             System.err.println("El servidor no esta prendido "+ e);

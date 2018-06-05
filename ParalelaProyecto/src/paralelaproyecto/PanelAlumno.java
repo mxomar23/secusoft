@@ -5,17 +5,38 @@
  */
 package paralelaproyecto;
 
+import RMI.RemoteInterface;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+import RMI.RemoteInterface;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author omar_
  */
 public class PanelAlumno extends javax.swing.JFrame {
-
+    
+    public ArrayList al = new ArrayList();
+     public final DefaultComboBoxModel materiaModel;
+     private int id_captura ,id_user;
     /**
      * Creates new form PanelAdmin
      */
-    public PanelAlumno() {
+    public PanelAlumno(int id_user) {
+        this.id_user = id_user;
         initComponents();
+        
+         materiaModel =  new DefaultComboBoxModel(new String[] {});
+        MateriasComboBox.setModel(materiaModel);
+        ConsultarDatos();
         
     }
 
@@ -34,13 +55,34 @@ public class PanelAlumno extends javax.swing.JFrame {
         Name = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        CicloDatosJLabel = new javax.swing.JLabel();
+        CicloDatosTextField = new javax.swing.JTextField();
+        SemestreDatosJlabel = new javax.swing.JLabel();
+        TurnoDatosJlabel = new javax.swing.JLabel();
+        CarreraDatosJlabel = new javax.swing.JLabel();
+        TurnoDatosJtext = new javax.swing.JTextField();
+        SemestreDatosTextField = new javax.swing.JTextField();
+        CarreraDatosTextField = new javax.swing.JTextField();
+        GrupoDatosJLabel = new javax.swing.JLabel();
+        GrupoDatosTextfield = new javax.swing.JTextField();
+        nombreJlabelDatos = new javax.swing.JLabel();
+        nombreDatosTextField = new javax.swing.JTextField();
+        ApellidoDatosJlabel = new javax.swing.JLabel();
+        ApellidoDatosJText = new javax.swing.JTextField();
+        MatriculaDatosJLabel = new javax.swing.JLabel();
+        MatriculaDatosJtext = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        MateriasComboBox = new javax.swing.JComboBox<>();
+        calificacionEditTextNE = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        ObtenerCalificacionboton = new javax.swing.JButton();
 
         jButton1.setText("jButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Panel Alumnos");
+        setPreferredSize(new java.awt.Dimension(604, 404));
 
         jPanel1.setLayout(null);
         jPanel1.add(Name);
@@ -57,45 +99,181 @@ public class PanelAlumno extends javax.swing.JFrame {
 
         jLabel1.setText("jLabel1");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(10, 30, 100, 14);
+        jLabel1.setBounds(20, 30, 500, 14);
 
         jTabbedPane1.addTab("Inicio", jPanel1);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 395, Short.MAX_VALUE)
+        jPanel4.setPreferredSize(new java.awt.Dimension(1000, 600));
+
+        CicloDatosJLabel.setText("Ciclo");
+
+        CicloDatosTextField.setEditable(false);
+
+        SemestreDatosJlabel.setText("Semestre");
+
+        TurnoDatosJlabel.setText("Turno");
+
+        CarreraDatosJlabel.setText("Carrera");
+
+        TurnoDatosJtext.setEditable(false);
+
+        SemestreDatosTextField.setEditable(false);
+
+        CarreraDatosTextField.setEditable(false);
+
+        GrupoDatosJLabel.setText("Grupo");
+
+        GrupoDatosTextfield.setEditable(false);
+
+        nombreJlabelDatos.setText("Nombre");
+
+        nombreDatosTextField.setEditable(false);
+
+        ApellidoDatosJlabel.setText("Apellido");
+
+        ApellidoDatosJText.setEditable(false);
+
+        MatriculaDatosJLabel.setText("Matricula");
+
+        MatriculaDatosJtext.setEditable(false);
+
+        jLabel2.setText("Materias");
+
+        MateriasComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        MateriasComboBox.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                MateriasComboBoxItemStateChanged(evt);
+            }
+        });
+        MateriasComboBox.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MateriasComboBoxMouseClicked(evt);
+            }
+        });
+        MateriasComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MateriasComboBoxActionPerformed(evt);
+            }
+        });
+
+        calificacionEditTextNE.setEditable(false);
+
+        jLabel6.setText("Calificacion");
+
+        ObtenerCalificacionboton.setText("Mostrar Calificacion");
+        ObtenerCalificacionboton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ObtenerCalificacionbotonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(217, 217, 217)
+                        .addComponent(nombreJlabelDatos)
+                        .addGap(63, 63, 63)
+                        .addComponent(ApellidoDatosJlabel))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(160, 160, 160)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(nombreDatosTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(MatriculaDatosJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(MatriculaDatosJtext, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(SemestreDatosJlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(SemestreDatosTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CicloDatosJLabel))
+                        .addGap(10, 10, 10)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ApellidoDatosJText, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TurnoDatosJlabel)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(GrupoDatosJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(GrupoDatosTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(CarreraDatosJlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(CarreraDatosTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(160, 160, 160)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(CicloDatosTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(MateriasComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2)
+                            .addComponent(ObtenerCalificacionboton))
+                        .addGap(20, 20, 20)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(calificacionEditTextNE)
+                                .addComponent(TurnoDatosJtext, javax.swing.GroupLayout.DEFAULT_SIZE, 70, Short.MAX_VALUE)))))
+                .addGap(20, 20, 20))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 272, Short.MAX_VALUE)
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(nombreJlabelDatos)
+                    .addComponent(ApellidoDatosJlabel))
+                .addGap(6, 6, 6)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(nombreDatosTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(MatriculaDatosJLabel)
+                        .addGap(6, 6, 6)
+                        .addComponent(MatriculaDatosJtext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(SemestreDatosJlabel)
+                        .addGap(6, 6, 6)
+                        .addComponent(SemestreDatosTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(CicloDatosJLabel))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(ApellidoDatosJText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(GrupoDatosJLabel)
+                        .addGap(6, 6, 6)
+                        .addComponent(GrupoDatosTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(CarreraDatosJlabel)
+                        .addGap(6, 6, 6)
+                        .addComponent(CarreraDatosTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(TurnoDatosJlabel)))
+                .addGap(6, 6, 6)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(CicloDatosTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TurnoDatosJtext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel6))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(MateriasComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(calificacionEditTextNE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(ObtenerCalificacionboton)
+                .addContainerGap())
         );
 
-        jTabbedPane1.addTab("tab2", jPanel2);
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 395, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 272, Short.MAX_VALUE)
-        );
-
-        jTabbedPane1.addTab("tab3", jPanel3);
+        jTabbedPane1.addTab("Consulta calificaciones", jPanel4);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 604, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 404, Short.MAX_VALUE)
         );
 
         pack();
@@ -108,19 +286,109 @@ public class PanelAlumno extends javax.swing.JFrame {
         login.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void MateriasComboBoxItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_MateriasComboBoxItemStateChanged
+
+    }//GEN-LAST:event_MateriasComboBoxItemStateChanged
+
+    private void MateriasComboBoxMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MateriasComboBoxMouseClicked
+
+    }//GEN-LAST:event_MateriasComboBoxMouseClicked
+
+    private void MateriasComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MateriasComboBoxActionPerformed
+
+    }//GEN-LAST:event_MateriasComboBoxActionPerformed
+
+    private void ObtenerCalificacionbotonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ObtenerCalificacionbotonActionPerformed
+        String materia = (String)MateriasComboBox.getSelectedItem();
+        al.clear();
+        try {
+            Registry MiRegistro = LocateRegistry.getRegistry("127.0.0.1", 1234);
+            RemoteInterface a = (RemoteInterface) MiRegistro.lookup("SE");
+            al = a.calificacion(id_user, materia);
+            calificacionEditTextNE.setText(al.get(0).toString());
+        } catch (Exception e) {
+            calificacionEditTextNE.setText("NR");
+        }
+    }//GEN-LAST:event_ObtenerCalificacionbotonActionPerformed
+
+        public void ConsultarDatos(){
+        
+         int id = 0, Dgrupo = 0, Dsemestre= 0, Dcarrera = 0, Dciclo = 0, Dturno = 0;
+            
+             try {
+                al.clear();
+                ArrayList al2 = new ArrayList();
+                al2.clear();
+             Registry MiRegistro = LocateRegistry.getRegistry("127.0.0.1", 1234);
+                RemoteInterface a = (RemoteInterface) MiRegistro.lookup("SE");  
+                al = a.retornodeAlumno(id_user);
+                 System.out.println(al.size());
+                nombreDatosTextField.setText(al.get(0).toString());
+                jLabel1.setText("Bienvenido Estudiante "+ al.get(0).toString()+" " + al.get(1).toString() + " al sistema de control escolar");
+                ApellidoDatosJText.setText(al.get(1).toString());
+                MatriculaDatosJtext.setText(al.get(2).toString());
+                Dsemestre = (int)al.get(4);
+                Dcarrera = (int)al.get(5);
+                al2 = a.datosAlumno((int)al.get(3), (int)al.get(4), (int)al.get(5),(int) al.get(6), (int)al.get(7));
+                GrupoDatosTextfield.setText(al2.get(0).toString());
+                CarreraDatosTextField.setText(al2.get(1).toString());
+                
+                SemestreDatosTextField.setText(al2.get(2).toString());
+                
+                CicloDatosTextField.setText(al2.get(3).toString());
+                TurnoDatosJtext.setText(al2.get(4).toString());
+            }
+            catch (Exception e) {   
+                    System.err.println("Error de llenado de datos " +e);
+               }
+             try {
+                 al.clear();
+                 materiaModel.removeAllElements();
+                  Registry MiRegistro = LocateRegistry.getRegistry("127.0.0.1", 1234);
+                RemoteInterface a = (RemoteInterface) MiRegistro.lookup("SE");
+                al = a.llenarMaterias(Dsemestre, Dcarrera);
+                 System.out.println(al.size());
+                for(int i = 0; i< al.size(); i++){
+                    materiaModel.addElement(al.get(i).toString());
+                }
+             } catch (Exception e) {
+                  System.err.println("Error de llenado de materias " +e);
+             }
+          
+         }     
     /**
      * @param args the command line arguments
      */
   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField ApellidoDatosJText;
+    private javax.swing.JLabel ApellidoDatosJlabel;
+    private javax.swing.JLabel CarreraDatosJlabel;
+    private javax.swing.JTextField CarreraDatosTextField;
+    private javax.swing.JLabel CicloDatosJLabel;
+    private javax.swing.JTextField CicloDatosTextField;
+    private javax.swing.JLabel GrupoDatosJLabel;
+    private javax.swing.JTextField GrupoDatosTextfield;
+    private javax.swing.JComboBox<String> MateriasComboBox;
+    private javax.swing.JLabel MatriculaDatosJLabel;
+    private javax.swing.JTextField MatriculaDatosJtext;
     private javax.swing.JLabel Name;
+    private javax.swing.JButton ObtenerCalificacionboton;
+    private javax.swing.JLabel SemestreDatosJlabel;
+    private javax.swing.JTextField SemestreDatosTextField;
+    private javax.swing.JLabel TurnoDatosJlabel;
+    private javax.swing.JTextField TurnoDatosJtext;
+    private javax.swing.JTextField calificacionEditTextNE;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTextField nombreDatosTextField;
+    private javax.swing.JLabel nombreJlabelDatos;
     // End of variables declaration//GEN-END:variables
 }

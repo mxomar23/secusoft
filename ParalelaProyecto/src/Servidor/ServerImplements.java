@@ -37,6 +37,21 @@ public class ServerImplements extends UnicastRemoteObject implements RemoteInter
         return null;
     }
     
+    public void cerrarConexion(){
+        Connection c;
+         try{
+            c = DriverManager.getConnection ("jdbc:mysql://localhost/proyecto","root", "");
+            System.out.println("Si");
+            c.close();
+        }catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, ex, "Error de conexión", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    public int returnIDUser(int id){
+        int idUser = id;
+        return idUser;
+    }
+    
     public void eliminar(String eliminacion){
         try{
             Connection conexion = conexion();
@@ -48,21 +63,22 @@ public class ServerImplements extends UnicastRemoteObject implements RemoteInter
         }
     }
     
-    public int login(String usuario, String password){
+    public ArrayList login(String usuario, String password){
         int resultado = 0;
+        ArrayList al = new ArrayList();
         try {
             Connection conexion = conexion();
             String SSQL="SELECT * FROM usuarios WHERE usuario = '"+usuario+"' AND contra = '"+password+"'";
             Statement s = conexion.createStatement();
             ResultSet rs = s.executeQuery(SSQL);
         if(rs.next()){
-            usuario = rs.getString(2);
-            resultado = rs.getInt(4);
+            al.add(rs.getInt(1));
+            al.add(rs.getInt(4));
         }
     } catch (SQLException ex) {
         JOptionPane.showMessageDialog(null, ex, "Error de conexión", JOptionPane.ERROR_MESSAGE);
     }
-    return resultado;
+    return al;
     }
 
     public void insertarAlumno(int id_alumno, String nombre, String apellido, int matricula, int grupo, int semestre, int carrera, int ciclo, int turno) throws Exception {
@@ -103,7 +119,8 @@ public class ServerImplements extends UnicastRemoteObject implements RemoteInter
     public void insertarUsuario( String user, String passwd, int Type){
         try {
             Connection conexion = conexion();
-            String SSQL="INSERT INTO `usuarios` (`id_usuario`, `usuario`, `contra`, `tipo_usuario`) VALUES (NULL, '"+user+"', '"+passwd+"', '"+Type+"') ";
+            String SSQL="INSERT INTO `usuarios` (`id_usuario`, `usuario`, `contra`, `tipo_usuario`) VALUES (NULL, "
+                    + "'"+user+"', '"+passwd+"', '"+Type+"') ";
             Statement s = conexion.createStatement();
             s.executeUpdate(SSQL);
             
@@ -127,7 +144,24 @@ public class ServerImplements extends UnicastRemoteObject implements RemoteInter
         }
         return null;
     }
-     public ArrayList retornodeAlumno(int id){
+ public ArrayList retornodeAlumnoDocente(String usernew){
+         ResultSet rs;
+         ArrayList al = new ArrayList();
+        try {
+            Connection conexion = conexion();
+            String SSQL="SELECT * FROM alumnos WHERE nombre='"+usernew+"'";
+            Statement s = conexion.createStatement();
+           rs = s.executeQuery(SSQL);
+           while(rs.next()){
+               al.add(rs.getInt(1));
+           }
+           return al;
+        } catch (SQLException e) {
+            System.err.println("Error sql "+ e);
+        }
+        return null;
+    }
+    public ArrayList retornodeAlumno(int id){
          ResultSet rs;
          ArrayList al = new ArrayList();
          
@@ -215,19 +249,20 @@ public class ServerImplements extends UnicastRemoteObject implements RemoteInter
      }
           public ArrayList llenarAlumnosDocente(int id){
             ArrayList al = new ArrayList();
-            int grupo = 0;
+            int grupo = 0, semestre = 0;
             try {
             Connection conexion = conexion();
             Statement s = conexion.createStatement();
             ResultSet rs = s.executeQuery("SELECT * FROM maestros WHERE id_usuario= '"+id+"' ");
             while (rs.next()){
             grupo = rs.getInt(5);
+            semestre = rs.getInt(6);
             }
                 
-            ResultSet rs2 = s.executeQuery("SELECT * FROM alumnos WHERE id_grupo= '"+grupo+"' ");
+            ResultSet rs2 = s.executeQuery("SELECT * FROM alumnos WHERE id_semestre= '"+grupo+"' AND id_grupo = '"+semestre+"'");
             while(rs2.next()) {
             al.add(rs2.getString(2));
-            al.add(rs2.getString(3));
+            
             }
          return al;
          } catch (Exception e) {
@@ -249,5 +284,47 @@ public class ServerImplements extends UnicastRemoteObject implements RemoteInter
          } catch (Exception e) {
          }
          return null;
+          }
+          
+          public void capturaCalificacion(int id, String materia, int valor){
+              int id_materia = 0;
+              try {
+            Connection conexion = conexion();
+            Statement s = conexion.createStatement();
+            ResultSet rs = s.executeQuery("Select * FROM materias WHERE nombre = '"+materia+"'");
+            while(rs.next()){
+                id_materia = rs.getInt(1);
+            }
+            String SSQL="INSERT INTO `calificaciones` (`id_usuario`, `id_materia`, `valor`) VALUES ("
+                    + "'"+id+"', '"+id_materia+"', '"+valor+"') ";
+           
+            s.executeUpdate(SSQL);
+            
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex, "Error de conexión", JOptionPane.ERROR_MESSAGE);
+        }
+              
+          }
+          public ArrayList calificacion(int id, String materia){
+               ArrayList al = new ArrayList();
+               int id_materia = 0;
+          
+               try {
+            Connection conexion = conexion();
+            Statement s = conexion.createStatement();
+            ResultSet rs = s.executeQuery("Select * FROM materias WHERE nombre = '"+materia+"'");
+            while(rs.next()){
+                id_materia = rs.getInt(1);
+            }
+            ResultSet rs1 = s.executeQuery("Select * FROM calificaciones WHERE id_usuario = '"+id+"'"
+                    + " AND id_materia = '"+id_materia+"'");
+            while (rs1.next()){
+            al.add(rs1.getString(3));
+            }
+         return al;
+             } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex, "Error de conexión", JOptionPane.ERROR_MESSAGE);
+        }
+              return null;
           }
 }

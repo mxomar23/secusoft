@@ -16,6 +16,7 @@ import javax.swing.JOptionPane;
 import RMI.RemoteInterface;
 import java.rmi.registry.Registry;
 import java.rmi.registry.LocateRegistry;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -26,6 +27,8 @@ public class Login extends javax.swing.JFrame {
     
     String usuario;
     String password;
+    public int id;
+    ArrayList al = new ArrayList();
     
 
     /**
@@ -134,25 +137,29 @@ public class Login extends javax.swing.JFrame {
 
     private void LoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginButtonActionPerformed
         // TODO add your handling code here:
+        al.clear();
         usuario = User.getText();
         password = Password.getText();
         try {
             Registry MiRegistro = LocateRegistry.getRegistry("127.0.0.1", 1234);
-            RemoteInterface s = (RemoteInterface) MiRegistro.lookup("SE");  
-            switch(s.login(usuario, password)){
+            RemoteInterface s = (RemoteInterface) MiRegistro.lookup("SE"); 
+            al = s.login(usuario, password);
+            id = (int)al.get(0);
+            int type = (int)al.get(1);
+            switch(type){
                 case 1:
                     this.hide();
-                    PanelAdmin panelAdmin = new PanelAdmin();
+                    PanelAdmin panelAdmin = new PanelAdmin(id);
                     panelAdmin.setVisible(true);
                     break;
                 case 2:
                     this.hide();
-                    PanelAlumno panelAlumno = new PanelAlumno();
+                    PanelAlumno panelAlumno = new PanelAlumno(id);
                     panelAlumno.setVisible(true);
                     break;
                 case 3:
                     this.hide();
-                    PanelDocente panelDocente = new PanelDocente(usuario);
+                    PanelDocente panelDocente = new PanelDocente(id, usuario);
                     panelDocente.setVisible(true);
                     break;
                 case 4:
