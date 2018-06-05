@@ -25,14 +25,15 @@ public class PanelDocente extends javax.swing.JFrame {
     DefaultListModel model2 =  new DefaultListModel();
     
     public int id;
-    public int id_captura;
+    public int id_captura, id_user;
     public final DefaultComboBoxModel materiaModel;
     
     /**
      * Creates new form PanelAdmin
      */
-    public PanelDocente(String usuario) {
+    public PanelDocente(int idUser, String usuario) {
         this.usuario = usuario;
+        this.id_user = idUser;
         initComponents();
         
          materiaModel =  new DefaultComboBoxModel(new String[] {});
@@ -44,8 +45,8 @@ public class PanelDocente extends javax.swing.JFrame {
  
             Registry MiRegistro = LocateRegistry.getRegistry("127.0.0.1", 1234);
             RemoteInterface a = (RemoteInterface) MiRegistro.lookup("SE");  
-            al = a.retornodeUsuario(this.usuario);
-            id = (int)al.get(0);
+            
+            id = id_user;
             
         } catch (Exception e) {
         }
