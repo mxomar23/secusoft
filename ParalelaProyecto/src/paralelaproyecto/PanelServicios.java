@@ -122,7 +122,6 @@ public class PanelServicios extends javax.swing.JFrame {
         cicloJComboBox = new javax.swing.JComboBox<>();
         jLabel17 = new javax.swing.JLabel();
         matriculaTextField = new javax.swing.JTextField();
-        jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         SemestreDatosJlabel = new javax.swing.JLabel();
         ApellidoDatosJText = new javax.swing.JTextField();
@@ -142,6 +141,27 @@ public class PanelServicios extends javax.swing.JFrame {
         nombreDatosTextField = new javax.swing.JTextField();
         CicloDatosTextField = new javax.swing.JTextField();
         ApellidoDatosJlabel = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
+        SemestreDatosJlabel1 = new javax.swing.JLabel();
+        ApellidoDatosJText1 = new javax.swing.JTextField();
+        TurnoDatosJlabel1 = new javax.swing.JLabel();
+        MatriculaDatosJLabel1 = new javax.swing.JLabel();
+        CarreraDatosJlabel1 = new javax.swing.JLabel();
+        MatriculaDatosJtext1 = new javax.swing.JTextField();
+        TurnoDatosJtext1 = new javax.swing.JTextField();
+        SemestreDatosTextField1 = new javax.swing.JTextField();
+        CarreraDatosTextField1 = new javax.swing.JTextField();
+        GrupoDatosJLabel1 = new javax.swing.JLabel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        ListaDatos1 = new javax.swing.JList<>();
+        GrupoDatosTextfield1 = new javax.swing.JTextField();
+        nombreJlabelDatos1 = new javax.swing.JLabel();
+        CicloDatosJLabel1 = new javax.swing.JLabel();
+        nombreDatosTextField1 = new javax.swing.JTextField();
+        CicloDatosTextField1 = new javax.swing.JTextField();
+        ApellidoDatosJlabel1 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
 
         jButton1.setText("jButton1");
 
@@ -392,9 +412,6 @@ public class PanelServicios extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Agregar alumnos", jPanel2);
 
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jTabbedPane1.addTab("Mostrar grupos", jPanel3);
-
         SemestreDatosJlabel.setText("Semestre");
 
         ApellidoDatosJText.setEditable(false);
@@ -524,6 +541,150 @@ public class PanelServicios extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Mostrar alumnos", jPanel4);
 
+        SemestreDatosJlabel1.setText("Semestre");
+
+        ApellidoDatosJText1.setEditable(false);
+
+        TurnoDatosJlabel1.setText("Turno");
+
+        MatriculaDatosJLabel1.setText("Matricula");
+
+        CarreraDatosJlabel1.setText("Carrera");
+
+        MatriculaDatosJtext1.setEditable(false);
+
+        TurnoDatosJtext1.setEditable(false);
+
+        SemestreDatosTextField1.setEditable(false);
+
+        CarreraDatosTextField1.setEditable(false);
+
+        GrupoDatosJLabel1.setText("Grupo");
+
+        ListaDatos1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        ListaDatos1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ListaDatos1MouseClicked(evt);
+            }
+        });
+        jScrollPane6.setViewportView(ListaDatos1);
+
+        GrupoDatosTextfield1.setEditable(false);
+
+        nombreJlabelDatos1.setText("Nombre");
+
+        CicloDatosJLabel1.setText("Ciclo");
+
+        nombreDatosTextField1.setEditable(false);
+
+        CicloDatosTextField1.setEditable(false);
+
+        ApellidoDatosJlabel1.setText("Apellido");
+
+        jLabel4.setText("Seleccione  grupo");
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B" }));
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(40, 40, 40)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(nombreDatosTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(MatriculaDatosJLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(MatriculaDatosJtext1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(SemestreDatosJlabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(SemestreDatosTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TurnoDatosJlabel1))
+                        .addGap(10, 10, 10)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ApellidoDatosJText1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(GrupoDatosJLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(GrupoDatosTextfield1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(CarreraDatosJlabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(CarreraDatosTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(CicloDatosJLabel1)))))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(66, 66, 66)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addComponent(nombreJlabelDatos1)
+                                .addGap(63, 63, 63)
+                                .addComponent(ApellidoDatosJlabel1))
+                            .addGroup(jPanel6Layout.createSequentialGroup()
+                                .addComponent(TurnoDatosJtext1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(40, 40, 40)
+                                .addComponent(CicloDatosTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(97, Short.MAX_VALUE))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel4)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(11, 11, 11)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(nombreJlabelDatos1)
+                            .addComponent(ApellidoDatosJlabel1))
+                        .addGap(6, 6, 6))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)))
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(nombreDatosTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(MatriculaDatosJLabel1)
+                        .addGap(6, 6, 6)
+                        .addComponent(MatriculaDatosJtext1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(SemestreDatosJlabel1)
+                        .addGap(6, 6, 6)
+                        .addComponent(SemestreDatosTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(TurnoDatosJlabel1))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(ApellidoDatosJText1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(GrupoDatosJLabel1)
+                        .addGap(6, 6, 6)
+                        .addComponent(GrupoDatosTextfield1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(CarreraDatosJlabel1)
+                        .addGap(6, 6, 6)
+                        .addComponent(CarreraDatosTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(CicloDatosJLabel1)))
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(TurnoDatosJtext1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CicloDatosTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(146, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Mostrar grupos", jPanel6);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -648,6 +809,10 @@ public class PanelServicios extends javax.swing.JFrame {
         String nomb = (String)ListaDatos.getSelectedValue();
         ConsultarDatos(nomb, 2);
     }//GEN-LAST:event_ListaDatosMouseClicked
+
+    private void ListaDatos1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ListaDatos1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ListaDatos1MouseClicked
          private void LlenarListaDatos(int dato){
         try{
             model2.clear();
@@ -763,33 +928,49 @@ public class PanelServicios extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField ApellidoDatosJText;
+    private javax.swing.JTextField ApellidoDatosJText1;
     private javax.swing.JLabel ApellidoDatosJlabel;
+    private javax.swing.JLabel ApellidoDatosJlabel1;
     private javax.swing.JComboBox<String> CarreraComboBox;
     private javax.swing.JLabel CarreraDatosJlabel;
+    private javax.swing.JLabel CarreraDatosJlabel1;
     private javax.swing.JTextField CarreraDatosTextField;
+    private javax.swing.JTextField CarreraDatosTextField1;
     private javax.swing.JLabel CicloDatosJLabel;
+    private javax.swing.JLabel CicloDatosJLabel1;
     private javax.swing.JTextField CicloDatosTextField;
+    private javax.swing.JTextField CicloDatosTextField1;
     private javax.swing.JComboBox<String> GrupoComboBox;
     private javax.swing.JLabel GrupoDatosJLabel;
+    private javax.swing.JLabel GrupoDatosJLabel1;
     private javax.swing.JTextField GrupoDatosTextfield;
+    private javax.swing.JTextField GrupoDatosTextfield1;
     private javax.swing.JList<String> ListaDatos;
+    private javax.swing.JList<String> ListaDatos1;
     private javax.swing.JLabel MatriculaDatosJLabel;
+    private javax.swing.JLabel MatriculaDatosJLabel1;
     private javax.swing.JTextField MatriculaDatosJtext;
+    private javax.swing.JTextField MatriculaDatosJtext1;
     private javax.swing.JLabel Name;
     private javax.swing.JTextField PasswdTextField;
     private javax.swing.JButton Reset;
     private javax.swing.JButton SaveUser;
     private javax.swing.JLabel SemestreDatosJlabel;
+    private javax.swing.JLabel SemestreDatosJlabel1;
     private javax.swing.JTextField SemestreDatosTextField;
+    private javax.swing.JTextField SemestreDatosTextField1;
     private javax.swing.JComboBox<String> SemestrecomboBox;
     private javax.swing.JLabel TurnoDatosJlabel;
+    private javax.swing.JLabel TurnoDatosJlabel1;
     private javax.swing.JTextField TurnoDatosJtext;
+    private javax.swing.JTextField TurnoDatosJtext1;
     private javax.swing.JTextField UserTextField;
     private javax.swing.JTextField apellidoTextField;
     private javax.swing.JComboBox<String> cicloJComboBox;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -801,16 +982,20 @@ public class PanelServicios extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField matriculaTextField;
     private javax.swing.JTextField nombreDatosTextField;
+    private javax.swing.JTextField nombreDatosTextField1;
     private javax.swing.JLabel nombreJlabelDatos;
+    private javax.swing.JLabel nombreJlabelDatos1;
     private javax.swing.JTextField nombreTextField;
     private javax.swing.JComboBox<String> turnoComboBox;
     // End of variables declaration//GEN-END:variables
