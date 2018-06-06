@@ -46,7 +46,7 @@ public class PanelServicios extends javax.swing.JFrame {
     Connection conexion;
     Statement s;
     private int tipoUsuario, idUsuario;
-    
+    //khe
     public PanelServicios() {
         initComponents();
         carreraModel = new DefaultComboBoxModel(new String[] {});
