@@ -39,10 +39,12 @@ public class PanelServicios extends javax.swing.JFrame {
     private final DefaultComboBoxModel cicloModel;
     private final DefaultComboBoxModel semestreModel;
     private final DefaultComboBoxModel grupoModel;
+    private final DefaultComboBoxModel grupoModel2;
     ArrayList array = new ArrayList();
     DefaultListModel model =  new DefaultListModel();
     ArrayList array2 = new ArrayList();
     DefaultListModel model2 =  new DefaultListModel();
+    DefaultListModel model3 =  new DefaultListModel();
     Connection conexion;
     Statement s;
     private int tipoUsuario, idUsuario;
@@ -54,12 +56,15 @@ public class PanelServicios extends javax.swing.JFrame {
         cicloModel =  new DefaultComboBoxModel(new String[] {});
         semestreModel = new DefaultComboBoxModel(new String[] {});
         grupoModel =  new DefaultComboBoxModel(new String[] {});
+        grupoModel2 =  new DefaultComboBoxModel(new String[] {});
         CarreraComboBox.setModel(carreraModel);
         turnoComboBox.setModel(turnoModel);
         cicloJComboBox.setModel(cicloModel);
         SemestrecomboBox.setModel(semestreModel);
         ListaDatos.setModel(model2);
+        ListaDatos1.setModel(model3);
         GrupoComboBox.setModel(grupoModel);
+        grupobox.setModel(grupoModel2);
         jTabbedPane1.addChangeListener(new ChangeListener() {
             @Override
         public void stateChanged(ChangeEvent ce) {
@@ -161,7 +166,7 @@ public class PanelServicios extends javax.swing.JFrame {
         CicloDatosTextField1 = new javax.swing.JTextField();
         ApellidoDatosJlabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        grupobox = new javax.swing.JComboBox<>();
 
         jButton1.setText("jButton1");
 
@@ -587,7 +592,12 @@ public class PanelServicios extends javax.swing.JFrame {
 
         jLabel4.setText("Seleccione  grupo");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B" }));
+        grupobox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B" }));
+        grupobox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                grupoboxActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -619,7 +629,7 @@ public class PanelServicios extends javax.swing.JFrame {
                                     .addComponent(CicloDatosJLabel1)))))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(grupobox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(66, 66, 66)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -647,7 +657,7 @@ public class PanelServicios extends javax.swing.JFrame {
                         .addGap(6, 6, 6))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(grupobox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)))
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
@@ -765,6 +775,7 @@ public class PanelServicios extends javax.swing.JFrame {
                 rs = s.executeQuery("SELECT * FROM grupos");
                 while(rs.next()) {
                    grupoModel.addElement(rs.getString(2));
+                   grupoModel2.addElement(rs.getString(2));
                 }
             } catch (SQLException e) {
             }
@@ -811,9 +822,21 @@ public class PanelServicios extends javax.swing.JFrame {
     }//GEN-LAST:event_ListaDatosMouseClicked
 
     private void ListaDatos1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ListaDatos1MouseClicked
-        // TODO add your handling code here:
+        if(ListaDatos1.isSelectionEmpty()){
+            JOptionPane.showMessageDialog(this, "No hay alumnos en ese grupo", "Aceptado", JOptionPane.ERROR_MESSAGE);
+        }
+        else{ 
+            String nomb = (String)ListaDatos1.getSelectedValue();
+            ConsultarDatos(nomb);
+        }
     }//GEN-LAST:event_ListaDatos1MouseClicked
-         private void LlenarListaDatos(int dato){
+
+    private void grupoboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_grupoboxActionPerformed
+        String selectedValue = grupobox.getSelectedItem().toString();
+        System.out.println(selectedValue);
+        busquedaGrupo(selectedValue);
+    }//GEN-LAST:event_grupoboxActionPerformed
+    private void LlenarListaDatos(int dato){
         try{
             model2.clear();
             Registry MiRegistro = LocateRegistry.getRegistry("127.0.0.1", 1234);
@@ -865,6 +888,41 @@ public class PanelServicios extends javax.swing.JFrame {
          }
       
      }
+       public void ConsultarDatos(String nomb){
+        ArrayList al = new ArrayList();
+        int id = 0, Dgrupo = 0, Dsemestre= 0, Dcarrera = 0, Dciclo = 0, Dturno = 0;
+        al.clear();      
+        try {
+
+        Registry MiRegistro = LocateRegistry.getRegistry("127.0.0.1", 1234);
+        RemoteInterface a = (RemoteInterface) MiRegistro.lookup("SE");  
+        al = a.retornodeUsuario(nomb);
+        id = (int)al.get(0);
+        }
+        catch (Exception e) {   
+              System.err.println("El servidor no esta prendido " +e);
+         }
+        try {
+          al.clear();
+          ArrayList al2 = new ArrayList();
+        Registry MiRegistro = LocateRegistry.getRegistry("127.0.0.1", 1234);
+        RemoteInterface a = (RemoteInterface) MiRegistro.lookup("SE");  
+        al = a.retornodeAlumno(id);
+          nombreDatosTextField1.setText(al.get(0).toString());
+          ApellidoDatosJText1.setText(al.get(1).toString());
+          MatriculaDatosJtext1.setText(al.get(2).toString());
+          al2 = a.datosAlumno((int)al.get(3), (int)al.get(4), (int)al.get(5),(int) al.get(6), (int)al.get(7));
+          GrupoDatosTextfield1.setText(al2.get(0).toString());
+          CarreraDatosTextField1.setText(al2.get(1).toString());
+          SemestreDatosTextField1.setText(al2.get(2).toString());
+          CicloDatosTextField1.setText(al2.get(3).toString());
+          TurnoDatosJtext1.setText(al2.get(4).toString());
+        }
+        catch (Exception e) {   
+              System.err.println("El servidor no esta prendido " +e);
+         }
+      
+     } 
     private void InsertarDatos(int tipo){
         ArrayList al = new ArrayList();
         try {
@@ -897,6 +955,23 @@ public class PanelServicios extends javax.swing.JFrame {
                 break;
          }
      }
+    
+    public void busquedaGrupo(String letraGrupo){
+    try{
+            model3.clear();
+            Registry MiRegistro = LocateRegistry.getRegistry("127.0.0.1", 1234);
+            RemoteInterface a = (RemoteInterface) MiRegistro.lookup("SE");  
+            Connection conexion = conexion();
+            Statement s = conexion.createStatement();
+            ResultSet rs = s.executeQuery("SELECT * FROM usuarios INNER JOIN alumnos on  usuarios.id_usuario = alumnos.id_usuario INNER JOIN grupos on alumnos.id_grupo = grupos.id_grupo WHERE grupos.nomenclatura = '"+letraGrupo+"' ");
+            while(rs.next()) 
+                model3.addElement(rs.getString(2));
+            conexion.close();
+        }catch (Exception e) {   
+            System.err.println("El servidor no esta prendido ");
+        }
+    }
+    
     private void LlenarLista(){
         try {
             model.clear();
@@ -967,10 +1042,10 @@ public class PanelServicios extends javax.swing.JFrame {
     private javax.swing.JTextField UserTextField;
     private javax.swing.JTextField apellidoTextField;
     private javax.swing.JComboBox<String> cicloJComboBox;
+    private javax.swing.JComboBox<String> grupobox;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
