@@ -87,7 +87,7 @@ public class PanelServicios extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(null, e, "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
-
+//Ya?
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
