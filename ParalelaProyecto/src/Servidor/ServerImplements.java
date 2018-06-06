@@ -173,13 +173,14 @@ public class ServerImplements extends UnicastRemoteObject implements RemoteInter
                 al.add(rs1.getString(2));//nombre
                 al.add(rs1.getString(3));//apellido
                 al.add(rs1.getString(4));//matricula
-                 al.add(rs1.getInt(5));//id_grupo
+                al.add(rs1.getInt(5));//id_grupo
                 al.add(rs1.getInt(6));//id_semestre
                 al.add(rs1.getInt(7));//id_carrera
                 al.add(rs1.getInt(8));//id_ciclo
                 al.add(rs1.getInt(9));//id_turno
                 return al;
             }
+            conexion.close();
          } catch (Exception e) {
          }
         return null;
@@ -201,7 +202,7 @@ public class ServerImplements extends UnicastRemoteObject implements RemoteInter
                  al.add(rs2.getString(12));//turno
                  return al;
             }
-            
+             conexion.close();
          } catch (Exception e) {
          }
         return null;

@@ -62,89 +62,86 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="69" pref="69" max="-2" attributes="0"/>
+                      <Component id="nombreJlabelDatos" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="63" pref="63" max="-2" attributes="0"/>
+                      <Component id="ApellidoDatosJlabel" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                      <Component id="jScrollPane4" min="-2" pref="110" max="-2" attributes="0"/>
+                      <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="116" max="-2" attributes="0"/>
-                              <Component id="nombreJlabelDatos" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="63" pref="63" max="-2" attributes="0"/>
-                              <Component id="ApellidoDatosJlabel" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                              <Component id="jScrollPane4" min="-2" pref="110" max="-2" attributes="0"/>
-                              <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="nombreDatosTextField" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
-                                  <Component id="MatriculaDatosJLabel" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
-                                  <Component id="MatriculaDatosJtext" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
-                                  <Component id="SemestreDatosJlabel" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
-                                  <Component id="SemestreDatosTextField" alignment="0" min="-2" pref="70" max="-2" attributes="0"/>
-                                  <Component id="CicloDatosJLabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                          <Component id="nombreDatosTextField" min="-2" pref="90" max="-2" attributes="0"/>
+                          <Component id="MatriculaDatosJLabel" min="-2" pref="60" max="-2" attributes="0"/>
+                          <Component id="MatriculaDatosJtext" min="-2" pref="90" max="-2" attributes="0"/>
+                          <Component id="SemestreDatosJlabel" min="-2" pref="60" max="-2" attributes="0"/>
+                          <Component id="SemestreDatosTextField" min="-2" pref="70" max="-2" attributes="0"/>
+                          <Component id="CicloDatosJLabel" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="TurnoDatosJlabel" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
                               <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="ApellidoDatosJText" alignment="0" min="-2" pref="110" max="-2" attributes="0"/>
-                                  <Component id="TurnoDatosJlabel" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="GrupoDatosJLabel" alignment="0" min="-2" pref="34" max="-2" attributes="0"/>
-                                          <Component id="GrupoDatosTextfield" alignment="0" min="-2" pref="59" max="-2" attributes="0"/>
-                                          <Component id="CarreraDatosJlabel" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
-                                          <Component id="CarreraDatosTextField" alignment="0" min="-2" pref="240" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="160" pref="160" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="CicloDatosTextField" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
-                                  <Component id="MateriasComboBox" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="ObtenerCalificacionboton" alignment="0" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Component id="calificacionEditTextNE" max="32767" attributes="0"/>
-                                      <Component id="TurnoDatosJtext" alignment="1" pref="70" max="32767" attributes="0"/>
-                                  </Group>
+                                  <Component id="ApellidoDatosJText" min="-2" pref="110" max="-2" attributes="0"/>
+                                  <Component id="GrupoDatosJLabel" min="-2" pref="34" max="-2" attributes="0"/>
+                                  <Component id="GrupoDatosTextfield" min="-2" pref="59" max="-2" attributes="0"/>
+                                  <Component id="CarreraDatosJlabel" min="-2" pref="60" max="-2" attributes="0"/>
+                                  <Component id="CarreraDatosTextField" min="-2" pref="240" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="160" pref="160" max="-2" attributes="0"/>
+                      <Component id="CicloDatosTextField" min="-2" pref="80" max="-2" attributes="0"/>
+                      <EmptySpace min="65" pref="65" max="-2" attributes="0"/>
+                      <Component id="TurnoDatosJtext" min="-2" pref="70" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="160" pref="160" max="-2" attributes="0"/>
+                      <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="104" pref="104" max="-2" attributes="0"/>
+                      <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="160" pref="160" max="-2" attributes="0"/>
+                      <Component id="MateriasComboBox" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="89" pref="89" max="-2" attributes="0"/>
+                      <Component id="calificacionEditTextNE" min="-2" pref="70" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="160" pref="160" max="-2" attributes="0"/>
+                      <Component id="ObtenerCalificacionboton" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="28" pref="28" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                           <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                              <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="nombreJlabelDatos" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="ApellidoDatosJlabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="nombreJlabelDatos" min="-2" max="-2" attributes="0"/>
+                                  <Component id="ApellidoDatosJlabel" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
+                          <Group type="102" attributes="0">
                               <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                               <Component id="jScrollPane4" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
+                          <Group type="102" attributes="0">
                               <Component id="nombreDatosTextField" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                               <Component id="MatriculaDatosJLabel" min="-2" max="-2" attributes="0"/>
@@ -157,7 +154,7 @@
                               <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                               <Component id="CicloDatosJLabel" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
+                          <Group type="102" attributes="0">
                               <Component id="ApellidoDatosJText" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
                               <Component id="GrupoDatosJLabel" min="-2" max="-2" attributes="0"/>
@@ -172,22 +169,21 @@
                           </Group>
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="CicloDatosTextField" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="TurnoDatosJtext" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="CicloDatosTextField" min="-2" max="-2" attributes="0"/>
+                          <Component id="TurnoDatosJtext" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="MateriasComboBox" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="calificacionEditTextNE" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="11" pref="11" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="MateriasComboBox" min="-2" max="-2" attributes="0"/>
+                          <Component id="calificacionEditTextNE" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
                       <Component id="ObtenerCalificacionboton" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
