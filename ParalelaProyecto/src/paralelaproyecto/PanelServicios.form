@@ -133,34 +133,182 @@
                 </Property>
               </Properties>
 
+
               <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
                 <Property name="useNullLayout" type="boolean" value="false"/>
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                          <Component id="jLabel2" min="-2" pref="70" max="-2" attributes="0"/>
+                          <EmptySpace min="110" pref="110" max="-2" attributes="0"/>
+                          <Component id="jLabel14" min="-2" pref="60" max="-2" attributes="0"/>
+                          <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                          <Component id="nombreTextField" min="-2" pref="130" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                          <Component id="UserTextField" min="-2" pref="110" max="-2" attributes="0"/>
+                          <EmptySpace min="70" pref="70" max="-2" attributes="0"/>
+                          <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="29" pref="29" max="-2" attributes="0"/>
+                          <Component id="apellidoTextField" min="-2" pref="130" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                          <Component id="jLabel3" min="-2" pref="90" max="-2" attributes="0"/>
+                          <EmptySpace min="90" pref="90" max="-2" attributes="0"/>
+                          <Component id="jLabel17" min="-2" pref="63" max="-2" attributes="0"/>
+                          <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
+                          <Component id="matriculaTextField" min="-2" pref="130" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                          <Component id="PasswdTextField" min="-2" pref="110" max="-2" attributes="0"/>
+                          <EmptySpace min="70" pref="70" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel16" min="-2" pref="40" max="-2" attributes="0"/>
+                              <Component id="jLabel10" min="-2" pref="40" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="cicloJComboBox" min="-2" pref="130" max="-2" attributes="0"/>
+                              <Component id="turnoComboBox" min="-2" pref="130" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="190" pref="190" max="-2" attributes="0"/>
+                          <Component id="jLabel11" min="-2" pref="60" max="-2" attributes="0"/>
+                          <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                          <Component id="SemestrecomboBox" min="-2" pref="130" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="190" pref="190" max="-2" attributes="0"/>
+                          <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="41" pref="41" max="-2" attributes="0"/>
+                          <Component id="GrupoComboBox" min="-2" pref="90" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="190" pref="190" max="-2" attributes="0"/>
+                          <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="29" pref="29" max="-2" attributes="0"/>
+                          <Component id="CarreraComboBox" min="-2" pref="206" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                          <Component id="jButton3" min="-2" pref="150" max="-2" attributes="0"/>
+                          <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
+                          <Component id="SaveUser" min="-2" pref="110" max="-2" attributes="0"/>
+                          <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                          <Component id="Reset" min="-2" pref="130" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="20" pref="20" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="9" pref="9" max="-2" attributes="0"/>
+                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
+                              <Component id="nombreTextField" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="11" pref="11" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="UserTextField" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
+                                      <Component id="apellidoTextField" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="3" pref="3" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="jLabel17" min="-2" max="-2" attributes="0"/>
+                                      <Component id="matriculaTextField" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
+                                  <Component id="PasswdTextField" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="jLabel16" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                  <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <Component id="cicloJComboBox" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                                  <Component id="turnoComboBox" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
+                              <Component id="SemestrecomboBox" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
+                              <Component id="GrupoComboBox" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
+                              <Component id="CarreraComboBox" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="60" pref="60" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                              <Component id="SaveUser" min="-2" max="-2" attributes="0"/>
+                              <Component id="Reset" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+
               </Layout>
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="jLabel2">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Usuario:"/>
                   </Properties>
+
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="10" y="20" width="70" height="-1"/>
                     </Constraint>
                   </Constraints>
+
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel3">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Contrase&#xf1;a:"/>
                   </Properties>
+
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="10" y="70" width="90" height="-1"/>
                     </Constraint>
                   </Constraints>
+
                 </Component>
                 <Component class="javax.swing.JTextField" name="UserTextField">
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UserTextFieldActionPerformed"/>
                   </Events>
+
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="10" y="40" width="110" height="-1"/>
@@ -173,6 +321,10 @@
                       <AbsoluteConstraints x="10" y="90" width="110" height="-1"/>
                     </Constraint>
                   </Constraints>
+
+                </Component>
+                <Component class="javax.swing.JTextField" name="PasswdTextField">
+
                 </Component>
                 <Component class="javax.swing.JButton" name="jButton3">
                   <Properties>
@@ -181,11 +333,13 @@
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
                   </Events>
+
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="10" y="270" width="150" height="-1"/>
                     </Constraint>
                   </Constraints>
+
                 </Component>
                 <Component class="javax.swing.JButton" name="SaveUser">
                   <Properties>
@@ -194,11 +348,13 @@
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SaveUserActionPerformed"/>
                   </Events>
+
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="190" y="270" width="110" height="-1"/>
                     </Constraint>
                   </Constraints>
+
                 </Component>
                 <Component class="javax.swing.JButton" name="Reset">
                   <Properties>
@@ -207,41 +363,49 @@
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ResetActionPerformed"/>
                   </Events>
+
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="310" y="270" width="130" height="-1"/>
                     </Constraint>
                   </Constraints>
+
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel10">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Turno:"/>
                   </Properties>
+
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="190" y="130" width="40" height="-1"/>
                     </Constraint>
                   </Constraints>
+
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel11">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Semestre:"/>
                   </Properties>
+
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="190" y="150" width="60" height="-1"/>
                     </Constraint>
                   </Constraints>
+
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel12">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Carrera:"/>
                   </Properties>
+
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="190" y="190" width="-1" height="-1"/>
                     </Constraint>
                   </Constraints>
+
                 </Component>
                 <Component class="javax.swing.JComboBox" name="CarreraComboBox">
                   <Properties>
@@ -260,21 +424,25 @@
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
+
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="260" y="190" width="206" height="-1"/>
                     </Constraint>
                   </Constraints>
+
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel13">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Grupo"/>
                   </Properties>
+
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="190" y="170" width="-1" height="-1"/>
                     </Constraint>
                   </Constraints>
+
                 </Component>
                 <Component class="javax.swing.JComboBox" name="GrupoComboBox">
                   <Properties>
@@ -288,11 +456,13 @@
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
+
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="260" y="170" width="90" height="-1"/>
                     </Constraint>
                   </Constraints>
+
                 </Component>
                 <Component class="javax.swing.JComboBox" name="SemestrecomboBox">
                   <Properties>
@@ -308,11 +478,13 @@
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
+
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="260" y="150" width="130" height="-1"/>
                     </Constraint>
                   </Constraints>
+
                 </Component>
                 <Component class="javax.swing.JComboBox" name="turnoComboBox">
                   <Properties>
@@ -328,36 +500,43 @@
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
+
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="260" y="130" width="130" height="-1"/>
                     </Constraint>
                   </Constraints>
+
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel14">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Nombre:"/>
                   </Properties>
+
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="190" y="50" width="60" height="-1"/>
                     </Constraint>
                   </Constraints>
+
                 </Component>
                 <Component class="javax.swing.JTextField" name="nombreTextField">
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nombreTextFieldActionPerformed"/>
                   </Events>
+
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="260" y="50" width="130" height="-1"/>
                     </Constraint>
                   </Constraints>
+
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel15">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Apellido:"/>
                   </Properties>
+
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="190" y="70" width="-1" height="-1"/>
@@ -370,16 +549,22 @@
                       <AbsoluteConstraints x="260" y="70" width="130" height="-1"/>
                     </Constraint>
                   </Constraints>
+
+                </Component>
+                <Component class="javax.swing.JTextField" name="apellidoTextField">
+
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel16">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Ciclo:"/>
                   </Properties>
+
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="190" y="110" width="40" height="-1"/>
                     </Constraint>
                   </Constraints>
+
                 </Component>
                 <Component class="javax.swing.JComboBox" name="cicloJComboBox">
                   <Properties>
@@ -398,21 +583,25 @@
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
+
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="260" y="110" width="130" height="-1"/>
                     </Constraint>
                   </Constraints>
+
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel17">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Matricula"/>
                   </Properties>
+
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="190" y="90" width="63" height="-1"/>
                     </Constraint>
                   </Constraints>
+
                 </Component>
                 <Component class="javax.swing.JTextField" name="matriculaTextField">
                   <Events>
@@ -420,15 +609,18 @@
                     <EventHandler event="keyPressed" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="matriculaTextFieldKeyPressed"/>
                     <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="matriculaTextFieldKeyTyped"/>
                   </Events>
+
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                       <AbsoluteConstraints x="260" y="90" width="130" height="-1"/>
                     </Constraint>
                   </Constraints>
+
                 </Component>
               </SubComponents>
             </Container>
           </SubComponents>
+
         </Container>
         <Container class="javax.swing.JPanel" name="jPanel4">
           <Constraints>
@@ -651,12 +843,28 @@
               </Properties>
             </Component>
           </SubComponents>
+
         </Container>
         <Container class="javax.swing.JPanel" name="jPanel6">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="Mostrar grupos">
                 <Property name="tabTitle" type="java.lang.String" value="Mostrar grupos"/>
+
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+            <Property name="useNullLayout" type="boolean" value="false"/>
+          </Layout>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanel4">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Mostrar alumnos">
+                <Property name="tabTitle" type="java.lang.String" value="Mostrar alumnos"/>
+
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -665,6 +873,7 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
+
                       <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
@@ -689,6 +898,32 @@
                                           <Component id="CarreraDatosJlabel1" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
                                           <Component id="CarreraDatosTextField1" alignment="0" min="-2" pref="240" max="-2" attributes="0"/>
                                           <Component id="CicloDatosJLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+
+                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jScrollPane5" min="-2" pref="110" max="-2" attributes="0"/>
+                              <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="nombreDatosTextField" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
+                                  <Component id="MatriculaDatosJLabel" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
+                                  <Component id="MatriculaDatosJtext" alignment="0" min="-2" pref="90" max="-2" attributes="0"/>
+                                  <Component id="SemestreDatosJlabel" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
+                                  <Component id="SemestreDatosTextField" alignment="0" min="-2" pref="70" max="-2" attributes="0"/>
+                                  <Component id="TurnoDatosJlabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="ApellidoDatosJText" alignment="0" min="-2" pref="110" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="GrupoDatosJLabel" alignment="0" min="-2" pref="34" max="-2" attributes="0"/>
+                                          <Component id="GrupoDatosTextfield" alignment="0" min="-2" pref="59" max="-2" attributes="0"/>
+                                          <Component id="CarreraDatosJlabel" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
+                                          <Component id="CarreraDatosTextField" alignment="0" min="-2" pref="240" max="-2" attributes="0"/>
+                                          <Component id="CicloDatosJLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+
                                       </Group>
                                   </Group>
                               </Group>
@@ -697,6 +932,7 @@
                               <EmptySpace min="150" pref="150" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
+
                                       <Component id="nombreJlabelDatos1" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="63" pref="63" max="-2" attributes="0"/>
                                       <Component id="ApellidoDatosJlabel1" min="-2" max="-2" attributes="0"/>
@@ -714,12 +950,28 @@
                           </Group>
                       </Group>
                       <EmptySpace pref="83" max="32767" attributes="0"/>
+
+                                      <Component id="nombreJlabelDatos" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="63" pref="63" max="-2" attributes="0"/>
+                                      <Component id="ApellidoDatosJlabel" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="TurnoDatosJtext" min="-2" pref="70" max="-2" attributes="0"/>
+                                      <EmptySpace min="40" pref="40" max="-2" attributes="0"/>
+                                      <Component id="CicloDatosTextField" min="-2" pref="130" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace pref="97" max="32767" attributes="0"/>
+
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
+
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
@@ -728,11 +980,18 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="nombreJlabelDatos1" alignment="0" min="-2" max="-2" attributes="0"/>
                           <Component id="ApellidoDatosJlabel1" alignment="0" min="-2" max="-2" attributes="0"/>
+
+                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="nombreJlabelDatos" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="ApellidoDatosJlabel" alignment="0" min="-2" max="-2" attributes="0"/>
+
                       </Group>
                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+
                               <Component id="jScrollPane6" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
@@ -767,69 +1026,152 @@
                           <Component id="CicloDatosTextField1" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="114" max="32767" attributes="0"/>
+
+                              <Component id="jScrollPane5" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="nombreDatosTextField" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                              <Component id="MatriculaDatosJLabel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                              <Component id="MatriculaDatosJtext" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="SemestreDatosJlabel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                              <Component id="SemestreDatosTextField" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                              <Component id="TurnoDatosJlabel" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="ApellidoDatosJText" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                              <Component id="GrupoDatosJLabel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                              <Component id="GrupoDatosTextfield" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                              <Component id="CarreraDatosJlabel" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                              <Component id="CarreraDatosTextField" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                              <Component id="CicloDatosJLabel" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="TurnoDatosJtext" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="CicloDatosTextField" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="159" max="32767" attributes="0"/>
+
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
+
             <Component class="javax.swing.JLabel" name="SemestreDatosJlabel1">
+
+            <Component class="javax.swing.JLabel" name="SemestreDatosJlabel">
+
               <Properties>
                 <Property name="text" type="java.lang.String" value="Semestre"/>
               </Properties>
             </Component>
+
             <Component class="javax.swing.JTextField" name="ApellidoDatosJText1">
+
+            <Component class="javax.swing.JTextField" name="ApellidoDatosJText">
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
               </Properties>
             </Component>
+
             <Component class="javax.swing.JLabel" name="TurnoDatosJlabel1">
+
+            <Component class="javax.swing.JLabel" name="TurnoDatosJlabel">
+
               <Properties>
                 <Property name="text" type="java.lang.String" value="Turno"/>
               </Properties>
             </Component>
+
             <Component class="javax.swing.JLabel" name="MatriculaDatosJLabel1">
+
+            <Component class="javax.swing.JLabel" name="MatriculaDatosJLabel">
+
               <Properties>
                 <Property name="text" type="java.lang.String" value="Matricula"/>
               </Properties>
             </Component>
+
             <Component class="javax.swing.JLabel" name="CarreraDatosJlabel1">
+
+            <Component class="javax.swing.JLabel" name="CarreraDatosJlabel">
+
               <Properties>
                 <Property name="text" type="java.lang.String" value="Carrera"/>
               </Properties>
             </Component>
+
             <Component class="javax.swing.JTextField" name="MatriculaDatosJtext1">
+
+            <Component class="javax.swing.JTextField" name="MatriculaDatosJtext">
+
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
               </Properties>
             </Component>
+
             <Component class="javax.swing.JTextField" name="TurnoDatosJtext1">
+
+            <Component class="javax.swing.JTextField" name="TurnoDatosJtext">
+
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
               </Properties>
             </Component>
+
             <Component class="javax.swing.JTextField" name="SemestreDatosTextField1">
+
+            <Component class="javax.swing.JTextField" name="SemestreDatosTextField">
+
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
               </Properties>
             </Component>
+
             <Component class="javax.swing.JTextField" name="CarreraDatosTextField1">
+
+            <Component class="javax.swing.JTextField" name="CarreraDatosTextField">
+
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
               </Properties>
             </Component>
+
             <Component class="javax.swing.JLabel" name="GrupoDatosJLabel1">
+
+            <Component class="javax.swing.JLabel" name="GrupoDatosJLabel">
+
               <Properties>
                 <Property name="text" type="java.lang.String" value="Grupo"/>
               </Properties>
             </Component>
+
             <Container class="javax.swing.JScrollPane" name="jScrollPane6">
+
+            <Container class="javax.swing.JScrollPane" name="jScrollPane5">
+
               <AuxValues>
                 <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
               </AuxValues>
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
+
                 <Component class="javax.swing.JList" name="ListaDatos1">
+
+                <Component class="javax.swing.JList" name="ListaDatos">
+
                   <Properties>
                     <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
                       <StringArray count="5">
@@ -842,7 +1184,11 @@
                     </Property>
                   </Properties>
                   <Events>
+
                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ListaDatos1MouseClicked"/>
+
+                    <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ListaDatosMouseClicked"/>
+ 
                   </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
@@ -850,36 +1196,61 @@
                 </Component>
               </SubComponents>
             </Container>
+
             <Component class="javax.swing.JTextField" name="GrupoDatosTextfield1">
+
+            <Component class="javax.swing.JTextField" name="GrupoDatosTextfield">
+
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
               </Properties>
             </Component>
+
             <Component class="javax.swing.JLabel" name="nombreJlabelDatos1">
+
+            <Component class="javax.swing.JLabel" name="nombreJlabelDatos">
+
               <Properties>
                 <Property name="text" type="java.lang.String" value="Nombre"/>
               </Properties>
             </Component>
+
             <Component class="javax.swing.JLabel" name="CicloDatosJLabel1">
+
+            <Component class="javax.swing.JLabel" name="CicloDatosJLabel">
+
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ciclo"/>
               </Properties>
             </Component>
+
             <Component class="javax.swing.JTextField" name="nombreDatosTextField1">
+
+            <Component class="javax.swing.JTextField" name="nombreDatosTextField">
+
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
               </Properties>
             </Component>
+
             <Component class="javax.swing.JTextField" name="CicloDatosTextField1">
+
+            <Component class="javax.swing.JTextField" name="CicloDatosTextField">
+
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
               </Properties>
             </Component>
+
             <Component class="javax.swing.JLabel" name="ApellidoDatosJlabel1">
+
+            <Component class="javax.swing.JLabel" name="ApellidoDatosJlabel">
+
               <Properties>
                 <Property name="text" type="java.lang.String" value="Apellido"/>
               </Properties>
             </Component>
+
             <Component class="javax.swing.JLabel" name="jLabel4">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Seleccionar grupo"/>
@@ -902,6 +1273,7 @@
                 <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
               </AuxValues>
             </Component>
+
           </SubComponents>
         </Container>
       </SubComponents>
