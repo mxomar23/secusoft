@@ -96,6 +96,7 @@ public class PanelAdmin extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         buttonGroup1 = new javax.swing.ButtonGroup();
         ButtonGroupTurno = new javax.swing.ButtonGroup();
+        buttonGroup2 = new javax.swing.ButtonGroup();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         Name = new javax.swing.JLabel();
@@ -437,6 +438,7 @@ public class PanelAdmin extends javax.swing.JFrame {
 
         jPanel5.setPreferredSize(new java.awt.Dimension(1000, 600));
 
+        buttonGroup2.add(alumnosRadioButton1);
         alumnosRadioButton1.setText("alumnos");
         alumnosRadioButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -444,6 +446,7 @@ public class PanelAdmin extends javax.swing.JFrame {
             }
         });
 
+        buttonGroup2.add(docenteRadioButton1);
         docenteRadioButton1.setText("Docentes");
         docenteRadioButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -451,6 +454,7 @@ public class PanelAdmin extends javax.swing.JFrame {
             }
         });
 
+        buttonGroup2.add(seRadioButton1);
         seRadioButton1.setText("Servicios Escolares");
         seRadioButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -528,23 +532,23 @@ public class PanelAdmin extends javax.swing.JFrame {
                     .addComponent(MatriculaDatosJtext, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(SemestreDatosJlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(SemestreDatosTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(CicloDatosJLabel))
+                    .addComponent(TurnoDatosJlabel))
                 .addGap(10, 10, 10)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(ApellidoDatosJText, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TurnoDatosJlabel)
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(GrupoDatosJLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(GrupoDatosTextfield, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(CarreraDatosJlabel, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(CarreraDatosTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addComponent(CarreraDatosTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CicloDatosJLabel)))))
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(160, 160, 160)
-                .addComponent(CicloDatosTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(20, 20, 20)
-                .addComponent(TurnoDatosJtext, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(TurnoDatosJtext, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(CicloDatosTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -574,7 +578,7 @@ public class PanelAdmin extends javax.swing.JFrame {
                         .addGap(6, 6, 6)
                         .addComponent(SemestreDatosTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10)
-                        .addComponent(CicloDatosJLabel))
+                        .addComponent(TurnoDatosJlabel))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(ApellidoDatosJText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10)
@@ -586,10 +590,10 @@ public class PanelAdmin extends javax.swing.JFrame {
                         .addGap(6, 6, 6)
                         .addComponent(CarreraDatosTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10)
-                        .addComponent(TurnoDatosJlabel)))
+                        .addComponent(CicloDatosJLabel)))
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(CicloDatosTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TurnoDatosJtext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(TurnoDatosJtext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CicloDatosTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         jTabbedPane1.addTab("Consulta datos", jPanel5);
@@ -651,6 +655,10 @@ public class PanelAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_ResetActionPerformed
 
     private void SaveUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveUserActionPerformed
+        if(UserTextField.getText().isEmpty() || PasswdTextField.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Campos sin llenar", "Aceptado", JOptionPane.ERROR_MESSAGE);
+        }    
+        else{
         user = UserTextField.getText();
         passwd = PasswdTextField.getText();
         Type = TypeOfUser.getSelectedIndex() + 2;
@@ -738,6 +746,8 @@ public class PanelAdmin extends javax.swing.JFrame {
             GuardarDatos.setVisible(true);
             break;
         }
+        }
+ 
     }//GEN-LAST:event_SaveUserActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -790,6 +800,8 @@ public class PanelAdmin extends javax.swing.JFrame {
         SemestreDatosTextField.setText("");
         CicloDatosTextField.setText("");
         TurnoDatosJtext.setText("");
+        MatriculaDatosJtext.setVisible(true);
+        MatriculaDatosJLabel.setVisible(true);
         SemestreDatosJlabel.setVisible(true);
         SemestreDatosTextField.setVisible(true);
         GrupoDatosJLabel.setVisible(true);
@@ -810,11 +822,16 @@ public class PanelAdmin extends javax.swing.JFrame {
         nombreDatosTextField.setText("");
         ApellidoDatosJText.setText("");
         MatriculaDatosJtext.setText("");
-        GrupoDatosTextfield.setText("");
-        SemestreDatosJlabel.setVisible(true);
-        SemestreDatosTextField.setVisible(true);
-        CarreraDatosJlabel.setVisible(true);
-        CarreraDatosTextField.setVisible(true);
+        MatriculaDatosJtext.setVisible(true);
+        MatriculaDatosJLabel.setVisible(true);
+        GrupoDatosJLabel.setVisible(false);
+        GrupoDatosTextfield.setVisible(false);
+        GrupoDatosJLabel.setVisible(false);
+        GrupoDatosTextfield.setVisible(false);
+        SemestreDatosJlabel.setVisible(false);
+        SemestreDatosTextField.setVisible(false);
+        CarreraDatosJlabel.setVisible(false);
+        CarreraDatosTextField.setVisible(false);
         CicloDatosJLabel.setVisible(false);
         CicloDatosTextField.setVisible(false);
         TurnoDatosJlabel.setVisible(false);
@@ -828,6 +845,8 @@ public class PanelAdmin extends javax.swing.JFrame {
         nombreDatosTextField.setText("");
         ApellidoDatosJText.setText("");
         MatriculaDatosJtext.setText("");
+        MatriculaDatosJtext.setVisible(false);
+        MatriculaDatosJLabel.setVisible(false);
         GrupoDatosJLabel.setVisible(false);
         GrupoDatosTextfield.setVisible(false);
         GrupoDatosJLabel.setVisible(false);
@@ -1142,6 +1161,7 @@ public class PanelAdmin extends javax.swing.JFrame {
     private javax.swing.JRadioButton alumnosRadioButton1;
     private javax.swing.JTextField apellidoTextField;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JComboBox<String> cicloJComboBox;
     private javax.swing.JRadioButton docenteRadioButton1;
     private javax.swing.JButton jButton1;
