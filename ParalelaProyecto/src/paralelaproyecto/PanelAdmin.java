@@ -641,7 +641,6 @@ public class PanelAdmin extends javax.swing.JFrame {
     }//GEN-LAST:event_nombreTextFieldActionPerformed
 
     private void GuardarDatosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarDatosActionPerformed
-
         InsertarDatos(Type);
     }//GEN-LAST:event_GuardarDatosActionPerformed
 
@@ -950,60 +949,65 @@ public class PanelAdmin extends javax.swing.JFrame {
      
      
      private void InsertarDatos(int tipo){
-         ArrayList al = new ArrayList();
-        try {
-            String usernew = user;
-            Registry MiRegistro = LocateRegistry.getRegistry("127.0.0.1", 1234);
-            RemoteInterface a = (RemoteInterface) MiRegistro.lookup("SE");  
-            al = a.login(user, passwd);
-            id_alumno = (int)al.get(0);
-        }catch (Exception e) {   
-            System.err.println("El servidor no esta prendido "+ e);
-        }               
-        nombre = nombreTextField.getText();
-        apellido =  apellidoTextField.getText(); 
-        switch(tipo){
-            case 2:
-                matricula = Integer.parseInt(matriculaTextField.getText());
-                grupo = GrupoComboBox.getSelectedIndex() +1 ;
-                semestre = SemestrecomboBox.getSelectedIndex() + 1;
-                carrera = CarreraComboBox.getSelectedIndex() + 1;
-                ciclo = cicloJComboBox.getSelectedIndex() +1;
-                turno = turnoComboBox.getSelectedIndex() + 1;
-                try {
-                    Registry MiRegistro = LocateRegistry.getRegistry("127.0.0.1", 1234);
-                    RemoteInterface a = (RemoteInterface) MiRegistro.lookup("SE");  
-                    a.insertarAlumno(id_alumno, nombre, apellido, matricula, grupo, semestre, carrera, ciclo, turno);
-                    JOptionPane.showMessageDialog(this, "Alumno Agregado con exito", "Aceptado", JOptionPane.INFORMATION_MESSAGE);
-                } catch (Exception e) {   
-                    System.err.println("El servidor no esta prendido " +e);
-                }
-                break;
-            case 3:         
-                matricula = Integer.parseInt(matriculaTextField.getText());
-                grupo = GrupoComboBox.getSelectedIndex() +1 ;
-                semestre = SemestrecomboBox.getSelectedIndex() + 1;
-                try {
-                    Registry MiRegistro = LocateRegistry.getRegistry("127.0.0.1", 1234);
-                    RemoteInterface a = (RemoteInterface) MiRegistro.lookup("SE");  
-                    a.insertarMaestro(id_alumno, nombre, apellido, matricula, grupo, semestre);
-                    JOptionPane.showMessageDialog(this, "Maestro Agregado con exito", "Aceptado", JOptionPane.INFORMATION_MESSAGE);
-                }catch (Exception e) {   
-                    System.err.println("El servidor no esta prendido ");
-                }
-                 break;
-             case 4:
-                try {
-                    Registry MiRegistro = LocateRegistry.getRegistry("127.0.0.1", 1234);
-                    RemoteInterface a = (RemoteInterface) MiRegistro.lookup("SE");    
-                    a.insertarServe(id_alumno, nombre, apellido);
-                    JOptionPane.showMessageDialog(this, "Servicios Escolares Agregado con exito", "Aceptado", JOptionPane.INFORMATION_MESSAGE);
-                }catch (Exception e) {   
-                    System.err.println("El servidor no esta prendido ");
-                }
-                break;
-         }
-     }
+        if(UserTextField.getText().isEmpty() || PasswdTextField.getText().isEmpty() || nombreTextField.getText().isEmpty() || apellidoTextField.getText().isEmpty() || matriculaTextField.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Campos sin llenar", "Aceptado", JOptionPane.ERROR_MESSAGE);
+        } 
+        else{
+            ArrayList al = new ArrayList();
+            try {
+                String usernew = user;
+                Registry MiRegistro = LocateRegistry.getRegistry("127.0.0.1", 1234);
+                RemoteInterface a = (RemoteInterface) MiRegistro.lookup("SE");  
+                al = a.login(user, passwd);
+                id_alumno = (int)al.get(0);
+            }catch (Exception e) {   
+                System.err.println("El servidor no esta prendido "+ e);
+            }               
+            nombre = nombreTextField.getText();
+            apellido =  apellidoTextField.getText(); 
+            switch(tipo){
+                case 2:
+                    matricula = Integer.parseInt(matriculaTextField.getText());
+                    grupo = GrupoComboBox.getSelectedIndex() +1 ;
+                    semestre = SemestrecomboBox.getSelectedIndex() + 1;
+                    carrera = CarreraComboBox.getSelectedIndex() + 1;
+                    ciclo = cicloJComboBox.getSelectedIndex() +1;
+                    turno = turnoComboBox.getSelectedIndex() + 1;
+                    try {
+                        Registry MiRegistro = LocateRegistry.getRegistry("127.0.0.1", 1234);
+                        RemoteInterface a = (RemoteInterface) MiRegistro.lookup("SE");  
+                        a.insertarAlumno(id_alumno, nombre, apellido, matricula, grupo, semestre, carrera, ciclo, turno);
+                        JOptionPane.showMessageDialog(this, "Alumno Agregado con exito", "Aceptado", JOptionPane.INFORMATION_MESSAGE);
+                    } catch (Exception e) {   
+                        System.err.println("El servidor no esta prendido " +e);
+                    }
+                    break;
+                case 3:         
+                    matricula = Integer.parseInt(matriculaTextField.getText());
+                    grupo = GrupoComboBox.getSelectedIndex() +1 ;
+                    semestre = SemestrecomboBox.getSelectedIndex() + 1;
+                    try {
+                        Registry MiRegistro = LocateRegistry.getRegistry("127.0.0.1", 1234);
+                        RemoteInterface a = (RemoteInterface) MiRegistro.lookup("SE");  
+                        a.insertarMaestro(id_alumno, nombre, apellido, matricula, grupo, semestre);
+                        JOptionPane.showMessageDialog(this, "Maestro Agregado con exito", "Aceptado", JOptionPane.INFORMATION_MESSAGE);
+                    }catch (Exception e) {   
+                        System.err.println("El servidor no esta prendido ");
+                    }
+                     break;
+                 case 4:
+                    try {
+                        Registry MiRegistro = LocateRegistry.getRegistry("127.0.0.1", 1234);
+                        RemoteInterface a = (RemoteInterface) MiRegistro.lookup("SE");    
+                        a.insertarServe(id_alumno, nombre, apellido);
+                        JOptionPane.showMessageDialog(this, "Servicios Escolares Agregado con exito", "Aceptado", JOptionPane.INFORMATION_MESSAGE);
+                    }catch (Exception e) {   
+                        System.err.println("El servidor no esta prendido ");
+                    }
+                    break;
+            }
+        }
+    }
      public void llenarComboBox(){
           try {
             ResultSet rs = s.executeQuery("SELECT * FROM carrera");
