@@ -39,6 +39,9 @@ public class PanelAdmin extends javax.swing.JFrame {
     private final DefaultComboBoxModel cicloModel;
     private final DefaultComboBoxModel semestreModel;
     private final DefaultComboBoxModel grupoModel;
+    private final DefaultComboBoxModel grupoModel2;
+    DefaultListModel model3 =  new DefaultListModel();
+    DefaultListModel model4 =  new DefaultListModel();
     ArrayList array = new ArrayList();
     DefaultListModel model =  new DefaultListModel();
     ArrayList array2 = new ArrayList();
@@ -57,6 +60,7 @@ public class PanelAdmin extends javax.swing.JFrame {
         cicloModel =  new DefaultComboBoxModel(new String[] {});
         semestreModel = new DefaultComboBoxModel(new String[] {});
         grupoModel =  new DefaultComboBoxModel(new String[] {});
+        grupoModel2 =  new DefaultComboBoxModel(new String[] {});
         ListaEliminados.setModel(model);
         ListaDatos.setModel(model2);
         CarreraComboBox.setModel(carreraModel);
@@ -64,6 +68,10 @@ public class PanelAdmin extends javax.swing.JFrame {
         cicloJComboBox.setModel(cicloModel);
         SemestrecomboBox.setModel(semestreModel);
         GrupoComboBox.setModel(grupoModel);
+        ListaDatos1.setModel(model3);
+        HorarioLista.setModel(model4);
+        grupobox.setModel(grupoModel2);
+        grupobox1.setModel(grupoModel2);
         jTabbedPane1.addChangeListener(new ChangeListener() {
             @Override
         public void stateChanged(ChangeEvent ce) {
@@ -71,6 +79,7 @@ public class PanelAdmin extends javax.swing.JFrame {
                 JTabbedPane pane = (JTabbedPane)ce.getSource();
                 System.out.println("Selected pane NO: " + pane.getSelectedIndex());
                 LlenarLista();
+                llenarCombo();
                 } 
             }
         });
@@ -157,6 +166,47 @@ public class PanelAdmin extends javax.swing.JFrame {
         ApellidoDatosJText = new javax.swing.JTextField();
         MatriculaDatosJLabel = new javax.swing.JLabel();
         MatriculaDatosJtext = new javax.swing.JTextField();
+        jPanel6 = new javax.swing.JPanel();
+        SemestreDatosJlabel1 = new javax.swing.JLabel();
+        ApellidoDatosJText1 = new javax.swing.JTextField();
+        TurnoDatosJlabel1 = new javax.swing.JLabel();
+        MatriculaDatosJLabel1 = new javax.swing.JLabel();
+        CarreraDatosJlabel1 = new javax.swing.JLabel();
+        MatriculaDatosJtext1 = new javax.swing.JTextField();
+        TurnoDatosJtext1 = new javax.swing.JTextField();
+        SemestreDatosTextField1 = new javax.swing.JTextField();
+        CarreraDatosTextField1 = new javax.swing.JTextField();
+        GrupoDatosJLabel1 = new javax.swing.JLabel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        ListaDatos1 = new javax.swing.JList<>();
+        GrupoDatosTextfield1 = new javax.swing.JTextField();
+        nombreJlabelDatos1 = new javax.swing.JLabel();
+        CicloDatosJLabel1 = new javax.swing.JLabel();
+        nombreDatosTextField1 = new javax.swing.JTextField();
+        CicloDatosTextField1 = new javax.swing.JTextField();
+        ApellidoDatosJlabel1 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        grupobox = new javax.swing.JComboBox<>();
+        jPanel7 = new javax.swing.JPanel();
+        Maestrotext = new javax.swing.JTextField();
+        TurnoDatosJlabel2 = new javax.swing.JLabel();
+        MatriculaDatosJLabel2 = new javax.swing.JLabel();
+        CarreraDatosJlabel2 = new javax.swing.JLabel();
+        Salontext = new javax.swing.JTextField();
+        Turnotext = new javax.swing.JTextField();
+        Iniciotext = new javax.swing.JTextField();
+        GrupoDatosJLabel2 = new javax.swing.JLabel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        HorarioLista = new javax.swing.JList<>();
+        Grupotext = new javax.swing.JTextField();
+        nombreJlabelDatos2 = new javax.swing.JLabel();
+        CicloDatosJLabel2 = new javax.swing.JLabel();
+        Materiatext = new javax.swing.JTextField();
+        Finaltext = new javax.swing.JTextField();
+        ApellidoDatosJlabel2 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        grupobox1 = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
 
         jButton1.setText("jButton1");
 
@@ -598,6 +648,297 @@ public class PanelAdmin extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Consulta datos", jPanel5);
 
+        SemestreDatosJlabel1.setText("Semestre");
+
+        ApellidoDatosJText1.setEditable(false);
+
+        TurnoDatosJlabel1.setText("Turno");
+
+        MatriculaDatosJLabel1.setText("Matricula");
+
+        CarreraDatosJlabel1.setText("Carrera");
+
+        MatriculaDatosJtext1.setEditable(false);
+
+        TurnoDatosJtext1.setEditable(false);
+
+        SemestreDatosTextField1.setEditable(false);
+
+        CarreraDatosTextField1.setEditable(false);
+
+        GrupoDatosJLabel1.setText("Grupo");
+
+        ListaDatos1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        ListaDatos1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ListaDatos1MouseClicked(evt);
+            }
+        });
+        jScrollPane6.setViewportView(ListaDatos1);
+
+        GrupoDatosTextfield1.setEditable(false);
+
+        nombreJlabelDatos1.setText("Nombre");
+
+        CicloDatosJLabel1.setText("Ciclo");
+
+        nombreDatosTextField1.setEditable(false);
+
+        CicloDatosTextField1.setEditable(false);
+
+        ApellidoDatosJlabel1.setText("Apellido");
+
+        jLabel5.setText("Seleccione  grupo");
+
+        grupobox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B" }));
+        grupobox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                grupoboxActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(jLabel5))
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(grupobox, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(66, 66, 66)
+                .addComponent(nombreJlabelDatos1)
+                .addGap(63, 63, 63)
+                .addComponent(ApellidoDatosJlabel1))
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(nombreDatosTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(MatriculaDatosJLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(MatriculaDatosJtext1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SemestreDatosJlabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SemestreDatosTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TurnoDatosJlabel1))
+                .addGap(10, 10, 10)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ApellidoDatosJText1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(GrupoDatosJLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(GrupoDatosTextfield1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CarreraDatosJlabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CarreraDatosTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CicloDatosJLabel1)))))
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(170, 170, 170)
+                .addComponent(TurnoDatosJtext1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(CicloDatosTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(11, 11, 11)
+                .addComponent(jLabel5)
+                .addGap(6, 6, 6)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(grupobox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(nombreJlabelDatos1)
+                            .addComponent(ApellidoDatosJlabel1))))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(nombreDatosTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(MatriculaDatosJLabel1)
+                        .addGap(6, 6, 6)
+                        .addComponent(MatriculaDatosJtext1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(SemestreDatosJlabel1)
+                        .addGap(6, 6, 6)
+                        .addComponent(SemestreDatosTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(TurnoDatosJlabel1))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(ApellidoDatosJText1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(GrupoDatosJLabel1)
+                        .addGap(6, 6, 6)
+                        .addComponent(GrupoDatosTextfield1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, 0)
+                        .addComponent(CarreraDatosJlabel1)
+                        .addGap(6, 6, 6)
+                        .addComponent(CarreraDatosTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(11, 11, 11)
+                        .addComponent(CicloDatosJLabel1)))
+                .addGap(1, 1, 1)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(TurnoDatosJtext1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CicloDatosTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+
+        jTabbedPane1.addTab("Mostrar grupos", jPanel6);
+
+        Maestrotext.setEditable(false);
+
+        TurnoDatosJlabel2.setText("Turno");
+
+        MatriculaDatosJLabel2.setText("Salon");
+
+        CarreraDatosJlabel2.setText("Hora de inicio");
+
+        Salontext.setEditable(false);
+
+        Turnotext.setEditable(false);
+
+        Iniciotext.setEditable(false);
+
+        GrupoDatosJLabel2.setText("Grupo");
+
+        HorarioLista.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        HorarioLista.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                HorarioListaMouseClicked(evt);
+            }
+        });
+        jScrollPane7.setViewportView(HorarioLista);
+
+        Grupotext.setEditable(false);
+
+        nombreJlabelDatos2.setText("Materia");
+
+        CicloDatosJLabel2.setText("Hora de termino");
+
+        Materiatext.setEditable(false);
+
+        Finaltext.setEditable(false);
+
+        ApellidoDatosJlabel2.setText("Maestro");
+
+        jLabel6.setText("Seleccione  grupo");
+
+        grupobox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B" }));
+        grupobox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                grupobox1ActionPerformed(evt);
+            }
+        });
+
+        jLabel7.setText("Seleccione hora");
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(grupobox1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addGap(1, 1, 1)
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel7)
+                                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addGap(19, 19, 19)
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Materiatext, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(MatriculaDatosJLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Salontext, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel7Layout.createSequentialGroup()
+                                        .addGap(1, 1, 1)
+                                        .addComponent(nombreJlabelDatos2))))
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(TurnoDatosJlabel2)
+                                    .addComponent(Turnotext, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(CarreraDatosJlabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Iniciotext, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(GrupoDatosJLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Grupotext, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addGap(1, 1, 1)
+                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(ApellidoDatosJlabel2)
+                                    .addComponent(Maestrotext, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(CicloDatosJLabel2)
+                                    .addComponent(Finaltext, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(11, 11, 11)
+                .addComponent(jLabel6)
+                .addGap(6, 6, 6)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(grupobox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(9, 9, 9)
+                        .addComponent(jLabel7)
+                        .addGap(6, 6, 6)
+                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addComponent(ApellidoDatosJlabel2)
+                                .addGap(6, 6, 6)
+                                .addComponent(Maestrotext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(9, 9, 9)
+                                .addComponent(GrupoDatosJLabel2)
+                                .addGap(6, 6, 6)
+                                .addComponent(Grupotext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addComponent(nombreJlabelDatos2)
+                                .addGap(5, 5, 5)
+                                .addComponent(Materiatext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(10, 10, 10)
+                                .addComponent(MatriculaDatosJLabel2)
+                                .addGap(6, 6, 6)
+                                .addComponent(Salontext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(TurnoDatosJlabel2)
+                                .addGap(6, 6, 6)
+                                .addComponent(Turnotext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(10, 10, 10)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addComponent(CarreraDatosJlabel2)
+                                .addGap(6, 6, 6)
+                                .addComponent(Iniciotext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel7Layout.createSequentialGroup()
+                                .addComponent(CicloDatosJLabel2)
+                                .addGap(6, 6, 6)
+                                .addComponent(Finaltext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+        );
+
+        jTabbedPane1.addTab("Horarios", jPanel7);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -868,6 +1209,77 @@ public class PanelAdmin extends javax.swing.JFrame {
 
     }//GEN-LAST:event_ListaDatosMouseClicked
 
+    private void ListaDatos1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ListaDatos1MouseClicked
+        if(ListaDatos1.isSelectionEmpty()){
+            JOptionPane.showMessageDialog(this, "No hay alumnos en ese grupo", "Aceptado", JOptionPane.ERROR_MESSAGE);
+        }
+        else{
+            String nomb = (String)ListaDatos1.getSelectedValue();
+            ConsultarDatos(nomb);
+        }
+    }//GEN-LAST:event_ListaDatos1MouseClicked
+
+    private void grupoboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_grupoboxActionPerformed
+        String selectedValue = grupobox.getSelectedItem().toString();
+        System.out.println(selectedValue);
+        busquedaGrupo(selectedValue);
+    }//GEN-LAST:event_grupoboxActionPerformed
+
+    private void HorarioListaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HorarioListaMouseClicked
+       if(HorarioLista.isSelectionEmpty()){
+            JOptionPane.showMessageDialog(this, "No hay alumnos en ese grupo", "Aceptado", JOptionPane.ERROR_MESSAGE);
+        }
+        else{
+            String nomb = HorarioLista.getSelectedValue();
+            int id = Integer.parseInt(nomb);
+            ConsultarDatos2(id);
+        }
+    }//GEN-LAST:event_HorarioListaMouseClicked
+
+    private void grupobox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_grupobox1ActionPerformed
+        String selectedValue = grupobox.getSelectedItem().toString();
+        System.out.println(selectedValue);
+        busquedaHorario(selectedValue);
+    }//GEN-LAST:event_grupobox1ActionPerformed
+    public void busquedaGrupo(String letraGrupo){
+    try{
+            model3.clear();
+            Registry MiRegistro = LocateRegistry.getRegistry("127.0.0.1", 1234);
+            RemoteInterface a = (RemoteInterface) MiRegistro.lookup("SE");  
+            Connection conexion = conexion();
+            Statement s = conexion.createStatement();
+            ResultSet rs = s.executeQuery("SELECT * FROM usuarios INNER JOIN alumnos on  usuarios.id_usuario = alumnos.id_usuario INNER JOIN grupos on alumnos.id_grupo = grupos.id_grupo WHERE grupos.nomenclatura = '"+letraGrupo+"' ");
+            while(rs.next()) 
+                model3.addElement(rs.getString(2));
+            conexion.close();
+        }catch (Exception e) {   
+            System.err.println("El servidor no esta prendido ");
+        }
+    }
+    public void busquedaHorario(String letraGrupo){
+    try{
+            model4.clear();
+            Registry MiRegistro = LocateRegistry.getRegistry("127.0.0.1", 1234);
+            RemoteInterface a = (RemoteInterface) MiRegistro.lookup("SE");  
+            Connection conexion = conexion();
+            Statement s = conexion.createStatement();/*
+            ResultSet rs = s.executeQuery(
+                    "SELECT horario.id_horario, maestros.nombre, materias.nombre, grupos.nomenclatura, salon.num_salon, horarios.horario_ini, horarios.horario_fin, turnos.nombre FROM horario" +
+                    "INNER JOIN horarios on  horario.id_horario = horarios.id_horario" +
+                    "INNER JOIN salon on horario.id_salon = salon.id_salon" +
+                    "INNER JOIN maestros on horario.id_maestro = maestros.id_usuario" +
+                    "INNER JOIN materias on horario.id_materia = materias.id_materia" +
+                    "INNER JOIN grupos on horario.id_grupo = grupos.id_grupo" +
+                    "INNER JOIN turnos on horarios.id_turno = turnos.id_turno" +
+                    "WHERE grupos.nomenclatura  = '"+letraGrupo+"'");*/
+            ResultSet rs = s.executeQuery("SELECT * FROM horario INNER JOIN grupos on horario.id_grupo = grupos.id_grupo WHERE grupos.nomenclatura  = '"+letraGrupo+"' ");
+            while(rs.next()) 
+                model4.addElement(rs.getString(1));
+            conexion.close();
+        }catch (Exception e) {   
+            System.err.println("El servidor no esta prendido ");
+        }
+    }
     private Connection conexion(){
         try{
             Connection conexion = DriverManager.getConnection ("jdbc:mysql://localhost/proyecto","root", "");
@@ -877,7 +1289,73 @@ public class PanelAdmin extends javax.swing.JFrame {
         }
         return null;
     }
-    
+       public void ConsultarDatos(String nomb){
+        ArrayList al = new ArrayList();
+        int id = 0, Dgrupo = 0, Dsemestre= 0, Dcarrera = 0, Dciclo = 0, Dturno = 0;
+        al.clear();      
+        try {
+
+        Registry MiRegistro = LocateRegistry.getRegistry("127.0.0.1", 1234);
+        RemoteInterface a = (RemoteInterface) MiRegistro.lookup("SE");  
+        al = a.retornodeUsuario(nomb);
+        id = (int)al.get(0);
+        }
+        catch (Exception e) {   
+              System.err.println("El servidor no esta prendido " +e);
+         }
+        try {
+          al.clear();
+          ArrayList al2 = new ArrayList();
+        Registry MiRegistro = LocateRegistry.getRegistry("127.0.0.1", 1234);
+        RemoteInterface a = (RemoteInterface) MiRegistro.lookup("SE");  
+        al = a.retornodeAlumno(id);
+          nombreDatosTextField1.setText(al.get(0).toString());
+          ApellidoDatosJText1.setText(al.get(1).toString());
+          MatriculaDatosJtext1.setText(al.get(2).toString());
+          al2 = a.datosAlumno((int)al.get(3), (int)al.get(4), (int)al.get(5),(int) al.get(6), (int)al.get(7));
+          GrupoDatosTextfield1.setText(al2.get(0).toString());
+          CarreraDatosTextField1.setText(al2.get(1).toString());
+          SemestreDatosTextField1.setText(al2.get(2).toString());
+          CicloDatosTextField1.setText(al2.get(3).toString());
+          TurnoDatosJtext1.setText(al2.get(4).toString());
+        }
+        catch (Exception e) {   
+              System.err.println("El servidor no esta prendido " +e);
+         }
+     } 
+       
+    public void ConsultarDatos2(int id_horario){
+        System.out.println(id_horario);
+        try{
+            Registry MiRegistro = LocateRegistry.getRegistry("127.0.0.1", 1234);
+            RemoteInterface a = (RemoteInterface) MiRegistro.lookup("SE");  
+            Connection conexion = conexion();
+            Statement s = conexion.createStatement();
+            ResultSet rs = s.executeQuery(
+                            "SELECT horario.id_horario, maestros.nombre, materias.nombre, grupos.nomenclatura, salon.num_salon, horarios.horario_ini, horarios.horario_fin, turnos.nombre FROM horario "
+                            + "INNER JOIN horarios on  horario.id_horario = horarios.id_horario "
+                            + "INNER JOIN salon on horario.id_salon = salon.id_salon "
+                            + "INNER JOIN maestros on horario.id_maestro = maestros.id_usuario "
+                            + "INNER JOIN materias on horario.id_materia = materias.id_materia "
+                            + "INNER JOIN grupos on horario.id_grupo = grupos.id_grupo "
+                            + "INNER JOIN turnos on horarios.id_turno = turnos.id_turno "
+                            + "WHERE horarios.id_horario  = '"+id_horario+"'");
+            while(rs.next()){
+                Maestrotext.setText(rs.getString(2));
+                Materiatext.setText(rs.getString(3));
+                Grupotext.setText(rs.getString(4));
+                Salontext.setText(rs.getString(5));
+                Iniciotext.setText(rs.getString(6));
+                Finaltext.setText(rs.getString(7));
+                Turnotext.setText(rs.getString(8));
+                
+            }
+
+            conexion.close();
+        }catch (Exception e) {   
+            System.err.println("El servidor no esta prendido ");
+        }
+     } 
    public void llenarCombo(){
         try {
             Registry MiRegistro = LocateRegistry.getRegistry("127.0.0.1", 1234);
@@ -904,6 +1382,7 @@ public class PanelAdmin extends javax.swing.JFrame {
                 rs = s.executeQuery("SELECT * FROM grupos");
                 while(rs.next()) {
                    grupoModel.addElement(rs.getString(2));
+                   grupoModel2.addElement(rs.getString(2));
                 }
             } catch (SQLException e) {
             }
@@ -949,8 +1428,8 @@ public class PanelAdmin extends javax.swing.JFrame {
      
      
      private void InsertarDatos(int tipo){
-        if(UserTextField.getText().isEmpty() || PasswdTextField.getText().isEmpty() || nombreTextField.getText().isEmpty() || apellidoTextField.getText().isEmpty() || matriculaTextField.getText().isEmpty()){
-            JOptionPane.showMessageDialog(this, "Campos sin llenar", "Aceptado", JOptionPane.ERROR_MESSAGE);
+        if(nombreTextField.getText().isEmpty() || apellidoTextField.getText().isEmpty() || matriculaTextField.getText().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Campos sin llenar", "No aceptado", JOptionPane.ERROR_MESSAGE);
         } 
         else{
             ArrayList al = new ArrayList();
@@ -1135,31 +1614,60 @@ public class PanelAdmin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField ApellidoDatosJText;
+    private javax.swing.JTextField ApellidoDatosJText1;
     private javax.swing.JLabel ApellidoDatosJlabel;
+    private javax.swing.JLabel ApellidoDatosJlabel1;
+    private javax.swing.JLabel ApellidoDatosJlabel2;
     private javax.swing.ButtonGroup ButtonGroupTurno;
     private javax.swing.JComboBox<String> CarreraComboBox;
     private javax.swing.JLabel CarreraDatosJlabel;
+    private javax.swing.JLabel CarreraDatosJlabel1;
+    private javax.swing.JLabel CarreraDatosJlabel2;
     private javax.swing.JTextField CarreraDatosTextField;
+    private javax.swing.JTextField CarreraDatosTextField1;
     private javax.swing.JLabel CicloDatosJLabel;
+    private javax.swing.JLabel CicloDatosJLabel1;
+    private javax.swing.JLabel CicloDatosJLabel2;
     private javax.swing.JTextField CicloDatosTextField;
+    private javax.swing.JTextField CicloDatosTextField1;
     private javax.swing.JButton EliminarUsuario;
+    private javax.swing.JTextField Finaltext;
     private javax.swing.JComboBox<String> GrupoComboBox;
     private javax.swing.JLabel GrupoDatosJLabel;
+    private javax.swing.JLabel GrupoDatosJLabel1;
+    private javax.swing.JLabel GrupoDatosJLabel2;
     private javax.swing.JTextField GrupoDatosTextfield;
+    private javax.swing.JTextField GrupoDatosTextfield1;
+    private javax.swing.JTextField Grupotext;
     private javax.swing.JButton GuardarDatos;
+    private javax.swing.JList<String> HorarioLista;
+    private javax.swing.JTextField Iniciotext;
     private javax.swing.JList<String> ListaDatos;
+    private javax.swing.JList<String> ListaDatos1;
     private javax.swing.JList<String> ListaEliminados;
+    private javax.swing.JTextField Maestrotext;
+    private javax.swing.JTextField Materiatext;
     private javax.swing.JLabel MatriculaDatosJLabel;
+    private javax.swing.JLabel MatriculaDatosJLabel1;
+    private javax.swing.JLabel MatriculaDatosJLabel2;
     private javax.swing.JTextField MatriculaDatosJtext;
+    private javax.swing.JTextField MatriculaDatosJtext1;
     private javax.swing.JLabel Name;
     private javax.swing.JTextField PasswdTextField;
     private javax.swing.JButton Reset;
+    private javax.swing.JTextField Salontext;
     private javax.swing.JButton SaveUser;
     private javax.swing.JLabel SemestreDatosJlabel;
+    private javax.swing.JLabel SemestreDatosJlabel1;
     private javax.swing.JTextField SemestreDatosTextField;
+    private javax.swing.JTextField SemestreDatosTextField1;
     private javax.swing.JComboBox<String> SemestrecomboBox;
     private javax.swing.JLabel TurnoDatosJlabel;
+    private javax.swing.JLabel TurnoDatosJlabel1;
+    private javax.swing.JLabel TurnoDatosJlabel2;
     private javax.swing.JTextField TurnoDatosJtext;
+    private javax.swing.JTextField TurnoDatosJtext1;
+    private javax.swing.JTextField Turnotext;
     private javax.swing.JList<String> TypeOfUser;
     private javax.swing.JTextField UserTextField;
     private javax.swing.JRadioButton alumnosRadioButton1;
@@ -1168,6 +1676,8 @@ public class PanelAdmin extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JComboBox<String> cicloJComboBox;
     private javax.swing.JRadioButton docenteRadioButton1;
+    private javax.swing.JComboBox<String> grupobox;
+    private javax.swing.JComboBox<String> grupobox1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -1184,18 +1694,28 @@ public class PanelAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextField matriculaTextField;
     private javax.swing.JTextField nombreDatosTextField;
+    private javax.swing.JTextField nombreDatosTextField1;
     private javax.swing.JLabel nombreJlabelDatos;
+    private javax.swing.JLabel nombreJlabelDatos1;
+    private javax.swing.JLabel nombreJlabelDatos2;
     private javax.swing.JTextField nombreTextField;
     private javax.swing.JRadioButton seRadioButton1;
     private javax.swing.JComboBox<String> turnoComboBox;
