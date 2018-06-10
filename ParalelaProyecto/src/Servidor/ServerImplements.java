@@ -247,28 +247,25 @@ public class ServerImplements extends UnicastRemoteObject implements RemoteInter
          }
          return null;
      }
-          public ArrayList llenarAlumnosDocente(int id){
+        public ArrayList llenarAlumnosDocente(int id){
             ArrayList al = new ArrayList();
             int grupo = 0, semestre = 0;
             try {
-            Connection conexion = conexion();
-            Statement s = conexion.createStatement();
-            ResultSet rs = s.executeQuery("SELECT * FROM maestros WHERE id_usuario= '"+id+"' ");
-            while (rs.next()){
-            grupo = rs.getInt(5);
-            semestre = rs.getInt(6);
+                Connection conexion = conexion();
+                Statement s = conexion.createStatement();
+                ResultSet rs = s.executeQuery("SELECT * FROM maestros WHERE id_usuario= '"+id+"' ");
+                while (rs.next()){
+                    grupo = rs.getInt(5);
+                    semestre = rs.getInt(6);
+                }
+                ResultSet rs2 = s.executeQuery("SELECT * FROM alumnos WHERE id_semestre= '"+semestre+"' AND id_grupo = '"+grupo+"'");
+                while(rs2.next())
+                    al.add(rs2.getString(2));
+                return al;
+            } catch (Exception e) {
             }
-                
-            ResultSet rs2 = s.executeQuery("SELECT * FROM alumnos WHERE id_semestre= '"+grupo+"' AND id_grupo = '"+semestre+"'");
-            while(rs2.next()) {
-            al.add(rs2.getString(2));
-            
-            }
-         return al;
-         } catch (Exception e) {
-         }
-         return null;
-     }
+            return null;
+        }
           public ArrayList llenarMaterias(int Dsemestre, int Dcarrera){
                ArrayList al = new ArrayList();
             

@@ -38,6 +38,10 @@ public class PanelAdmin extends javax.swing.JFrame {
     private final DefaultComboBoxModel turnoModel;
     private final DefaultComboBoxModel cicloModel;
     private final DefaultComboBoxModel semestreModel;
+    private final DefaultComboBoxModel materiaModel;
+    private final DefaultComboBoxModel horaModel;
+    private final DefaultComboBoxModel maestroModel;
+    private final DefaultComboBoxModel salonModel;
     private final DefaultComboBoxModel grupoModel;
     private final DefaultComboBoxModel grupoModel2;
     DefaultListModel model3 =  new DefaultListModel();
@@ -59,11 +63,19 @@ public class PanelAdmin extends javax.swing.JFrame {
         turnoModel = new DefaultComboBoxModel(new String[] {});
         cicloModel =  new DefaultComboBoxModel(new String[] {});
         semestreModel = new DefaultComboBoxModel(new String[] {});
+        materiaModel = new DefaultComboBoxModel(new String[] {});
+        maestroModel = new DefaultComboBoxModel(new String[] {});
+        salonModel = new DefaultComboBoxModel(new String[] {});
+        horaModel = new DefaultComboBoxModel(new String[] {});
         grupoModel =  new DefaultComboBoxModel(new String[] {});
         grupoModel2 =  new DefaultComboBoxModel(new String[] {});
         ListaEliminados.setModel(model);
         ListaDatos.setModel(model2);
+        horacombo.setModel(horaModel);
+        maestrocombo.setModel(maestroModel);
+        saloncombo.setModel(salonModel); 
         CarreraComboBox.setModel(carreraModel);
+        materiacombo.setModel(materiaModel);
         turnoComboBox.setModel(turnoModel);
         cicloJComboBox.setModel(cicloModel);
         SemestrecomboBox.setModel(semestreModel);
@@ -72,6 +84,7 @@ public class PanelAdmin extends javax.swing.JFrame {
         HorarioLista.setModel(model4);
         grupobox.setModel(grupoModel2);
         grupobox1.setModel(grupoModel2);
+        grupobox2.setModel(grupoModel2);
         jTabbedPane1.addChangeListener(new ChangeListener() {
             @Override
         public void stateChanged(ChangeEvent ce) {
@@ -207,6 +220,25 @@ public class PanelAdmin extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         grupobox1 = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
+        jPanel8 = new javax.swing.JPanel();
+        TurnoDatosJlabel3 = new javax.swing.JLabel();
+        MatriculaDatosJLabel3 = new javax.swing.JLabel();
+        CarreraDatosJlabel3 = new javax.swing.JLabel();
+        Turnotext1 = new javax.swing.JTextField();
+        Iniciotext1 = new javax.swing.JTextField();
+        nombreJlabelDatos3 = new javax.swing.JLabel();
+        CicloDatosJLabel3 = new javax.swing.JLabel();
+        Finaltext1 = new javax.swing.JTextField();
+        ApellidoDatosJlabel3 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        grupobox2 = new javax.swing.JComboBox<>();
+        jLabel9 = new javax.swing.JLabel();
+        materiacombo = new javax.swing.JComboBox<>();
+        maestrocombo = new javax.swing.JComboBox<>();
+        saloncombo = new javax.swing.JComboBox<>();
+        horacombo = new javax.swing.JComboBox<>();
+        jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
 
         jButton1.setText("jButton1");
 
@@ -288,7 +320,7 @@ public class PanelAdmin extends javax.swing.JFrame {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(19, 19, 19)
                         .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(422, Short.MAX_VALUE))
+                .addContainerGap(687, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -327,6 +359,11 @@ public class PanelAdmin extends javax.swing.JFrame {
             public String getElementAt(int i) { return strings[i]; }
         });
         TypeOfUser.setSelectedIndex(0);
+        TypeOfUser.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TypeOfUserMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(TypeOfUser);
 
         jPanel2.add(jScrollPane1);
@@ -937,13 +974,163 @@ public class PanelAdmin extends javax.swing.JFrame {
                                 .addComponent(Finaltext, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
         );
 
-        jTabbedPane1.addTab("Horarios", jPanel7);
+        jTabbedPane1.addTab("Mostrar horarios", jPanel7);
+
+        TurnoDatosJlabel3.setText("Turno");
+
+        MatriculaDatosJLabel3.setText("Salon");
+
+        CarreraDatosJlabel3.setText("Hora de inicio");
+
+        Turnotext1.setEditable(false);
+
+        Iniciotext1.setEditable(false);
+
+        nombreJlabelDatos3.setText("Materia");
+
+        CicloDatosJLabel3.setText("Hora de termino");
+
+        Finaltext1.setEditable(false);
+
+        ApellidoDatosJlabel3.setText("Maestro");
+
+        jLabel8.setText("Seleccione  grupo");
+
+        grupobox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A", "B" }));
+        grupobox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                grupobox2ActionPerformed(evt);
+            }
+        });
+
+        jLabel9.setText("Seleccione hora");
+
+        materiacombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        maestrocombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        saloncombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        horacombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        horacombo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                horacomboActionPerformed(evt);
+            }
+        });
+
+        jButton5.setText("Guardar");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
+        jButton6.setText("Cancelar");
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(160, 160, 160)
+                .addComponent(jLabel8)
+                .addGap(96, 96, 96)
+                .addComponent(jLabel9))
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(160, 160, 160)
+                .addComponent(grupobox2, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(96, 96, 96)
+                .addComponent(horacombo, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(160, 160, 160)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ApellidoDatosJlabel3)
+                    .addComponent(maestrocombo, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(TurnoDatosJlabel3)
+                    .addComponent(Turnotext1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(160, 160, 160)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(nombreJlabelDatos3)
+                    .addComponent(materiacombo, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(CarreraDatosJlabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Iniciotext1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(160, 160, 160)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(MatriculaDatosJLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(saloncombo, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(CicloDatosJLabel3)
+                    .addComponent(Finaltext1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(200, 200, 200)
+                .addComponent(jButton5)
+                .addGap(99, 99, 99)
+                .addComponent(jButton6))
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel9))
+                .addGap(6, 6, 6)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(grupobox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(horacombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(10, 10, 10)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addComponent(ApellidoDatosJlabel3)
+                        .addGap(6, 6, 6)
+                        .addComponent(maestrocombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(TurnoDatosJlabel3)
+                        .addGap(6, 6, 6)
+                        .addComponent(Turnotext1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addComponent(nombreJlabelDatos3)
+                        .addGap(6, 6, 6)
+                        .addComponent(materiacombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(CarreraDatosJlabel3)
+                        .addGap(6, 6, 6)
+                        .addComponent(Iniciotext1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addComponent(MatriculaDatosJLabel3)
+                        .addGap(6, 6, 6)
+                        .addComponent(saloncombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(CicloDatosJLabel3)
+                        .addGap(6, 6, 6)
+                        .addComponent(Finaltext1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(60, 60, 60)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButton5)
+                    .addComponent(jButton6)))
+        );
+
+        jTabbedPane1.addTab("Agregar horario", jPanel8);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 621, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 886, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1241,6 +1428,23 @@ public class PanelAdmin extends javax.swing.JFrame {
         System.out.println(selectedValue);
         busquedaHorario(selectedValue);
     }//GEN-LAST:event_grupobox1ActionPerformed
+
+    private void TypeOfUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TypeOfUserMouseClicked
+
+    }//GEN-LAST:event_TypeOfUserMouseClicked
+
+    private void grupobox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_grupobox2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_grupobox2ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void horacomboActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_horacomboActionPerformed
+        String selectedValue = horacombo.getSelectedItem().toString();
+        busquedaHora(selectedValue);
+    }//GEN-LAST:event_horacomboActionPerformed
     public void busquedaGrupo(String letraGrupo){
     try{
             model3.clear();
@@ -1280,6 +1484,23 @@ public class PanelAdmin extends javax.swing.JFrame {
             System.err.println("El servidor no esta prendido ");
         }
     }
+    public void busquedaHora(String letraGrupo){
+    try{
+            Registry MiRegistro = LocateRegistry.getRegistry("127.0.0.1", 1234);
+            RemoteInterface a = (RemoteInterface) MiRegistro.lookup("SE");  
+            Connection conexion = conexion();
+            Statement s = conexion.createStatement();
+            ResultSet rs = s.executeQuery("SELECT * FROM horarios INNER join turnos on horarios.id_turno = turnos.id_turno WHERE id_horario  = '"+letraGrupo+"' ");
+            while(rs.next()) {
+                Iniciotext1.setText(rs.getString(2));
+                Finaltext1.setText(rs.getString(3));
+                Turnotext1.setText(rs.getString(6));
+            }
+            conexion.close();
+        }catch (Exception e) {   
+            System.err.println("El servidor no esta prendido ");
+        }
+    }
     private Connection conexion(){
         try{
             Connection conexion = DriverManager.getConnection ("jdbc:mysql://localhost/proyecto","root", "");
@@ -1289,7 +1510,7 @@ public class PanelAdmin extends javax.swing.JFrame {
         }
         return null;
     }
-       public void ConsultarDatos(String nomb){
+    public void ConsultarDatos(String nomb){
         ArrayList al = new ArrayList();
         int id = 0, Dgrupo = 0, Dsemestre= 0, Dcarrera = 0, Dciclo = 0, Dturno = 0;
         al.clear();      
@@ -1364,29 +1585,36 @@ public class PanelAdmin extends javax.swing.JFrame {
                 Connection conexion = conexion();
                 Statement s = conexion.createStatement();
                 ResultSet rs = s.executeQuery("SELECT * FROM carrera");
-                while(rs.next()) {
+                while(rs.next()) 
                    carreraModel.addElement(rs.getString(2));
-                }
                 rs = s.executeQuery("SELECT * FROM turnos");
-                while(rs.next()) {
+                while(rs.next()) 
                    turnoModel.addElement(rs.getString(2));
-                }
                 rs = s.executeQuery("SELECT * FROM ciclo");
-                while(rs.next()) {
+                while(rs.next()) 
                    cicloModel.addElement(rs.getString(2));
-                }
                 rs = s.executeQuery("SELECT * FROM semestre");
-                while(rs.next()) {
+                while(rs.next()) 
                    semestreModel.addElement(rs.getString(2));
-                }
                 rs = s.executeQuery("SELECT * FROM grupos");
                 while(rs.next()) {
                    grupoModel.addElement(rs.getString(2));
                    grupoModel2.addElement(rs.getString(2));
                 }
+                rs = s.executeQuery("SELECT * FROM salon");
+                while(rs.next()) 
+                   salonModel.addElement(rs.getString(2));
+                rs = s.executeQuery("SELECT * FROM maestros");
+                while(rs.next()) 
+                   maestroModel.addElement(rs.getString(2));
+                rs = s.executeQuery("SELECT * FROM horarios");
+                while(rs.next()) 
+                   horaModel.addElement(rs.getString(1));
+                rs = s.executeQuery("SELECT * FROM materias");
+                while(rs.next()) 
+                   materiaModel.addElement(rs.getString(2));
             } catch (SQLException e) {
             }
-
         } catch (Exception e) {
             System.err.println("El servidor no esta prendido ");
         }
@@ -1428,7 +1656,10 @@ public class PanelAdmin extends javax.swing.JFrame {
      
      
      private void InsertarDatos(int tipo){
-        if(nombreTextField.getText().isEmpty() || apellidoTextField.getText().isEmpty() || matriculaTextField.getText().isEmpty()){
+        if(nombreTextField.getText().isEmpty() || apellidoTextField.getText().isEmpty() || matriculaTextField.getText().isEmpty() && tipo == 3){
+            JOptionPane.showMessageDialog(this, "Campos sin llenar", "No aceptado", JOptionPane.ERROR_MESSAGE);
+        } 
+        else if(nombreTextField.getText().isEmpty() || apellidoTextField.getText().isEmpty() && tipo == 4){
             JOptionPane.showMessageDialog(this, "Campos sin llenar", "No aceptado", JOptionPane.ERROR_MESSAGE);
         } 
         else{
@@ -1488,50 +1719,42 @@ public class PanelAdmin extends javax.swing.JFrame {
         }
     }
      public void llenarComboBox(){
-          try {
+        try {
             ResultSet rs = s.executeQuery("SELECT * FROM carrera");
-            while(rs.next()) {
+            while(rs.next()) 
                carreraModel.addElement(rs.getString(2));
-            }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e, "Error", JOptionPane.ERROR_MESSAGE);
         }
-           try {
-            
+        try {
             ResultSet rs = s.executeQuery("SELECT * FROM turnos");
-            while(rs.next()) {
+            while(rs.next()) 
                turnoModel.addElement(rs.getString(2));
-            }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e, "Error", JOptionPane.ERROR_MESSAGE);
         }
-             try {
-           
+        try {
             ResultSet rs = s.executeQuery("SELECT * FROM ciclo");
-            while(rs.next()) {
+            while(rs.next())
                cicloModel.addElement(rs.getString(2));
-            }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e, "Error", JOptionPane.ERROR_MESSAGE);
         }
-                try {
-           
+        try {
             ResultSet rs = s.executeQuery("SELECT * FROM semestre");
-            while(rs.next()) {
+            while(rs.next()) 
                semestreModel.addElement(rs.getString(2));
-            }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e, "Error", JOptionPane.ERROR_MESSAGE);
         }
-                     try {
-           
+        try {
             ResultSet rs = s.executeQuery("SELECT * FROM grupos");
-            while(rs.next()) {
+            while(rs.next()) 
                grupoModel.addElement(rs.getString(2));
-            }
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, e, "Error", JOptionPane.ERROR_MESSAGE);
         }
+ 
      }
        public void ConsultarDatos(String nomb, int tipoUsuarioDatos){
         ArrayList al = new ArrayList();
@@ -1618,20 +1841,24 @@ public class PanelAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel ApellidoDatosJlabel;
     private javax.swing.JLabel ApellidoDatosJlabel1;
     private javax.swing.JLabel ApellidoDatosJlabel2;
+    private javax.swing.JLabel ApellidoDatosJlabel3;
     private javax.swing.ButtonGroup ButtonGroupTurno;
     private javax.swing.JComboBox<String> CarreraComboBox;
     private javax.swing.JLabel CarreraDatosJlabel;
     private javax.swing.JLabel CarreraDatosJlabel1;
     private javax.swing.JLabel CarreraDatosJlabel2;
+    private javax.swing.JLabel CarreraDatosJlabel3;
     private javax.swing.JTextField CarreraDatosTextField;
     private javax.swing.JTextField CarreraDatosTextField1;
     private javax.swing.JLabel CicloDatosJLabel;
     private javax.swing.JLabel CicloDatosJLabel1;
     private javax.swing.JLabel CicloDatosJLabel2;
+    private javax.swing.JLabel CicloDatosJLabel3;
     private javax.swing.JTextField CicloDatosTextField;
     private javax.swing.JTextField CicloDatosTextField1;
     private javax.swing.JButton EliminarUsuario;
     private javax.swing.JTextField Finaltext;
+    private javax.swing.JTextField Finaltext1;
     private javax.swing.JComboBox<String> GrupoComboBox;
     private javax.swing.JLabel GrupoDatosJLabel;
     private javax.swing.JLabel GrupoDatosJLabel1;
@@ -1642,6 +1869,7 @@ public class PanelAdmin extends javax.swing.JFrame {
     private javax.swing.JButton GuardarDatos;
     private javax.swing.JList<String> HorarioLista;
     private javax.swing.JTextField Iniciotext;
+    private javax.swing.JTextField Iniciotext1;
     private javax.swing.JList<String> ListaDatos;
     private javax.swing.JList<String> ListaDatos1;
     private javax.swing.JList<String> ListaEliminados;
@@ -1650,6 +1878,7 @@ public class PanelAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel MatriculaDatosJLabel;
     private javax.swing.JLabel MatriculaDatosJLabel1;
     private javax.swing.JLabel MatriculaDatosJLabel2;
+    private javax.swing.JLabel MatriculaDatosJLabel3;
     private javax.swing.JTextField MatriculaDatosJtext;
     private javax.swing.JTextField MatriculaDatosJtext1;
     private javax.swing.JLabel Name;
@@ -1665,9 +1894,11 @@ public class PanelAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel TurnoDatosJlabel;
     private javax.swing.JLabel TurnoDatosJlabel1;
     private javax.swing.JLabel TurnoDatosJlabel2;
+    private javax.swing.JLabel TurnoDatosJlabel3;
     private javax.swing.JTextField TurnoDatosJtext;
     private javax.swing.JTextField TurnoDatosJtext1;
     private javax.swing.JTextField Turnotext;
+    private javax.swing.JTextField Turnotext1;
     private javax.swing.JList<String> TypeOfUser;
     private javax.swing.JTextField UserTextField;
     private javax.swing.JRadioButton alumnosRadioButton1;
@@ -1678,10 +1909,14 @@ public class PanelAdmin extends javax.swing.JFrame {
     private javax.swing.JRadioButton docenteRadioButton1;
     private javax.swing.JComboBox<String> grupobox;
     private javax.swing.JComboBox<String> grupobox1;
+    private javax.swing.JComboBox<String> grupobox2;
+    private javax.swing.JComboBox<String> horacombo;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1697,12 +1932,15 @@ public class PanelAdmin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -1710,13 +1948,17 @@ public class PanelAdmin extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JComboBox<String> maestrocombo;
+    private javax.swing.JComboBox<String> materiacombo;
     private javax.swing.JTextField matriculaTextField;
     private javax.swing.JTextField nombreDatosTextField;
     private javax.swing.JTextField nombreDatosTextField1;
     private javax.swing.JLabel nombreJlabelDatos;
     private javax.swing.JLabel nombreJlabelDatos1;
     private javax.swing.JLabel nombreJlabelDatos2;
+    private javax.swing.JLabel nombreJlabelDatos3;
     private javax.swing.JTextField nombreTextField;
+    private javax.swing.JComboBox<String> saloncombo;
     private javax.swing.JRadioButton seRadioButton1;
     private javax.swing.JComboBox<String> turnoComboBox;
     // End of variables declaration//GEN-END:variables
