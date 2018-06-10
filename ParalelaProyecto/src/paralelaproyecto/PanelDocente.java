@@ -36,7 +36,7 @@ public class PanelDocente extends javax.swing.JFrame {
         this.id_user = idUser;
         initComponents();
         
-         materiaModel =  new DefaultComboBoxModel(new String[] {});
+        materiaModel =  new DefaultComboBoxModel(new String[] {});
         ListaDatos.setModel(model2);
         ListaDatos1.setModel(model2);
         MateriasComboBox.setModel(materiaModel);
