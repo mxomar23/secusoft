@@ -98,7 +98,19 @@ public class ServerImplements extends UnicastRemoteObject implements RemoteInter
         try {
             Connection conexion = conexion();
             String SSQL="INSERT INTO `maestros` (`id_usuario`, `nombre`, `apellido`, `matricula`, `id_grupo` ,`id_semestre`) VALUES ('"+id_alumno+"', '"+nombre+"', '"+apellido+"'"
-                        + ",'"+matricula+"') ";
+                        + ",'"+matricula+"' , '"+grupo+"', '"+semestre+"') ";
+            Statement s = conexion.createStatement();
+            s.executeUpdate(SSQL);
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex, "Error de conexión", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+    public void insertarHorario(int inicio, int fin, int maestro, int materia, int grupo, int salon){
+          try {
+            Connection conexion = conexion();
+            String SSQL="INSERT INTO `horario` (`id_horario`, `id_horario_fin`, `id_maestro`, `id_materia`, `id_grupo` ,`id_salon`) VALUES "
+                    + "('"+inicio+"', '"+fin+"', '"+maestro+"'"
+                        + ",'"+materia+"' , '"+grupo+"', '"+salon+"') ";
             Statement s = conexion.createStatement();
             s.executeUpdate(SSQL);
         } catch (SQLException ex) {

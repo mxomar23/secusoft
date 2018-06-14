@@ -21,6 +21,7 @@ public interface RemoteInterface extends Remote{
     public int returnIDUser(int id)throws Exception;
     public void insertarUsuario( String usuario, String contraseña, int id_ususario )throws Exception;
     public void insertarMaestro(int id_alumno, String nombre, String apellido, int matricula, int grupo, int semestre)throws Exception;
+    public void insertarHorario(int inicio, int fin, int maestro, int materia, int grupo, int salon)throws Exception;
     public void insertarServe(int id_alumno, String nombre, String apellido)throws Exception;
     public void insertarAlumno(int id_alumno, String nombre, String apellido, int matricula, int grupo, int semestre, int carrera, int ciclo, int turno)throws Exception;
     public void cerrarConexion()throws Exception;
